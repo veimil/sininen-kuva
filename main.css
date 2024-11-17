@@ -170,6 +170,7 @@ nav ul a:active {
     height: 100vh;
     background-color: rgba(139, 201, 254, 0.1);
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     z-index: 500;
     opacity: 0;
     visibility: hidden;
@@ -189,17 +190,16 @@ main {
 }
 
 .cover {
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .kansikuva {
     overflow: hidden;
     width: 100%;
-    padding-top: 80px;
+    margin-top: 80px;
     z-index: 10;
     /* isommalle */
     /* height: 100vh; */
@@ -210,46 +210,34 @@ main {
     width: 100%;
     height: auto;
     /*toisin päin isommalle */
-    max-height: calc(100vh - 85px);
+    /* max-height: calc(100vh - 85px); */
     object-fit: cover;
 }
 
 .vali {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     background-color: var(--white);
     background-image: url('/images/abstrakti5.webp');
     background-position: center;
     transform: translateY(-3rem);
-    flex-grow: 1;
+   
 }
-
 
 .card {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 4rem;
     background-color: rgba(255, 255, 255, 0.2);
     z-index: 10;
-    position: relative;
     border-radius: 25px;
     margin: 1rem;
     color: black;
 }
-
-
-/* .card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(30px);
-    z-index: -1;
-    border-radius: inherit;
-} */
 
 .portfolio {
     display: flex;
