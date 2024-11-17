@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <title>Sininen Kuva</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <div class="logocontainer">
+            <img src="/images/logo-light.png" alt="" id="logoimage" />
+        </div>
+        <div class="nav-wrapper">
+            <button class="menu-trigger" onclick="toggleDropdown()">
+                <img src="/images/menu-blue.svg" alt="Menu" />
+            </button>
+            <div class="dropdown">
+                <nav>
+
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <p>Koti</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/gallery">
+                                <p>Galleria</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#contact">
+                                <p>Yhteystiedot</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="overlay" onclick="closeDropdown()"></div>
+
+    <main>
+        <section class="cover">
+            <div class="kansikuva">
+                <img src="/images/sininenkuva.webp" alt="Sininen kuva cover" width="450" height="700" />
+            </div>
+            <div class="vali">
+                <div class="card">
+                    <p>
+                        "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
+                        näkee"
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <div class="imggrid">
+                <img class="auto-scroll-elem" src="/images/press1.webp" alt="Sininen kuva portfolio example" width="400"
+                    height="500" />
+                <img class="auto-scroll-elem" src="/images/press2.webp" alt="Sininen kuva portfolio example" width="400"
+                    height="500" />
+                <img class="auto-scroll-elem" src="/images/press3.webp" alt="Sininen kuva portfolio example" width="400"
+                    height="500" />
+                <img class="auto-scroll-elem" src="/images/press4.webp" alt="Sininen kuva portfolio example" width="400"
+                    height="500" />
+                <img class="auto-scroll-elem" src="/images/press5.webp" alt="Sininen kuva portfolio example" width="400"
+                    height="500" />
+            </div>
+            <!-- <div class="dot-container">
+                {#each Array(sections ? sections.length : 0) as _, i}
+                <span class="dot {currentIndex === i ? 'active' : ''}"></span>
+                {/each}
+            </div> -->
+
+            <div class="additionalpics">
+                <div class="imgcolumn">
+                    <img src="/images/kukat.webp" alt="Sininen kuva portfolio example" width="600" height="500" />
+                    <img src="/images/people.webp" alt="Sininen kuva portfolio example" width="600" height="500" />
+                </div>
+                <img src="/images/pose.webp" alt="" />
+            </div>
+            <div class="seemore">
+                <a href="/galleria">Galleria</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="aboutinner aboutinner1">
+                <div class="textcolumn textcolumn1">
+                    <p>
+                        <span style="font-weight: bold; font-size: larger;">Etsitkö</span> yrityksellesi
+                        ammattivalokuvaajaa, joka hallitsee tekniikan
+                        lisäksi myös kuvaustilanteen tunnelman luomisen parhaan lopputuloksen
+                        saamiseksi? Olet juuri oikeassa paikassa, lämpimästi tervetuloa
+                        kuvien maailmaan!
+                    </p>
+                </div>
+                <div class="textcolumn">
+                    <p>
+                        Sininen Kuva on täyden palvelun laatustudio, jonka perustaja
+                        olen minä, valokuvaaja Sini Pennanen. Sininen kuva tarjoaa
+                        käyttöösi kaiken osaamiseni ja kokemukseni, joita olen
+                        vuosien varrella saanut erilaisten ihmisten ja yritysten
+                        kanssa toimiessani.
+                    </p>
+                </div>
+                <div class="aboutimg aboutimg1">
+                    <img src="/images/aboutme.webp" alt="" class="kuvaaja" />
+                </div>
+
+                <!-- <div class="aboutlinks">
+                            <a
+                                class="screenshotcontainer"
+                                href="https://www.kirkkojakaupunki.fi/-/harras-hetki-valokuvaaja-sini-pennanen-hiljentyy-hevostallin-tunnelmassa"
+                                target="_blank"
+                                ><img src="/screenshot2.png" alt="" />
+                                <div class="seemore">Lue tallielämästä</div>
+                            </a>
+                            <a
+                                class="screenshotcontainer"
+                                href="https://tyopaikat.oikotie.fi/tyontekijalle/artikkelit/tyon-ytimessa-valokuvaaja-sini-pennanen"
+                                target="_blank"
+                                ><img src="/screenshot.png" alt="" />
+                                <div class="seemore">Lue Oikotiessä työstäni</div>
+                            </a>
+                        </div> -->
+            </div>
+            <div class="aboutinner aboutinner2">
+                <div class="textcolumn textcolumn3">
+                    <p>
+                        <span style="font-weight: bold; font-size: larger;">Kuvaan</span>
+                        useille Suomen johtaville yrityksille, sekä mainos- ja viestintätoimistoille
+                        ja lehtitaloille mainontaa ja lehtikuvia. Töitäni voit nähdä
+                        muun muassa aikakausi- ja asiakaslehdissä sekä mainoksissa Suomessa
+                        ja muualla Euroopassa.
+                        <!-- Aloitin valokuvamallina v. 1996 ja siirryin sujuvasti
+                        kameran toiselle puolelle v. 2002. Kuvattavana oleminen on
+                        antanut minulle perspektiiviä kuvaamiseen ja siihen miten
+                        ohjata ihmistä kameran edessä. -->
+                    </p>
+                </div>
+                <div class="textcolumn">
+                    <p>
+                        Parasta työssäni on olla osa tiimiä ja tuottaa upea
+                        lopputulos yhteistyönä. Pidän kaikista työni vaiheista:
+                        autolla ajamisesta kuvauspaikoille, kuvauksista, ihmisistä,
+                        kuvausjärjestelyistä aina kuvien viimeistelyyn saakka. On
+                        hienoa, että saan tehdä töitä toinen toistaan mukavampien
+                        kuvausjärjestelijöiden, stailistien, toimittajien,
+                        graafikoiden, markkinointi- ja viestintäalan ihmisten sekä
+                        tietysti asiakkaiden kanssa.
+                    </p>
+                </div>
+                <div class="seemore">
+                    <a href="https://tyopaikat.oikotie.fi/tyontekijalle/artikkelit/tyon-ytimessa-valokuvaaja-sini-pennanen"
+                        target="_blank">
+                        <p>Lue lisää työstäni</p>
+                    </a>
+                </div>
+                <!-- <div class="aboutimg aboutimg2">
+                    <img src="/images/kuvaaja2.jpg" alt="" class="kuvaaja2" />
+                </div> -->
+            </div>
+        </section>
+
+        <section class="gallerypreview">
+            <div class="scrollcontainer1">
+                <img src="/images/promotion.webp" class="model2" />
+                <img src="/images/talot.webp" alt="" />
+            </div>
+            <div class="scrollcontainer2">
+                <img src="/images/kruunuvuori.webp" class="model" />
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="headerandsocials">
+                <h2 class="contact-h2">Yhteystiedot</h2>
+                <div class="socials">
+                    <div class="contactsvg social">
+                        <a href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/" target="_blank"><img
+                                src="/images/linkkari.svg" alt="" /></a>
+                    </div>
+                    <div class="contactsvg social">
+                        <a href="https://www.instagram.com/sininenkuva/" target="_blank"><img src="/images/insta.svg"
+                                alt="" /></a>
+                    </div>
+                    <div class="contactsvg social">
+                        <a href="https://www.facebook.com/sininenkuva.fi/" target="_blank"><img src="/images/face.svg"
+                                alt="" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contactdiv">
+                <div class="contactinfo">
+                    <div class="itemandtext">
+                        <!-- <div class="contactsvg">
+                            <img src="/images/ok-logo.svg" alt="" />
+                        </div> -->
+                        <p>Y: 1888410-7</p>
+                    </div>
+                    <a href="mailto:posti@sininenkuva.fi" class="itemandtext">
+                        <!-- <div class="contactsvg">
+                            <img src="/images/email-logo.svg" alt="" />
+                        </div> -->
+                        posti@sininenkuva.fi
+                    </a>
+                    <a href="tel:+358400948838" class="itemandtext">
+                        <!-- <div class="contactsvg">
+                            <img src="/images/phone-logo.svg" alt="" />
+                        </div> -->
+                        0400 948 838
+                    </a>
+                </div>
+                <h2>Viesti</h2>
+                <div class="form-container">
+                    <form action="">
+                        <div class="basicinputs">
+                            <div class="formcolumn inputcolumn">
+                                <input type="text" id="etunimi" name="etunimi" placeholder="Etunimi" required />
+
+                                <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi" />
+
+                                <input type="text" id="puhelinnumero" name="puhelinnumero"
+                                    placeholder="Puhelinnumero" />
+
+                                <input type="email" id="email" name="email" placeholder="Sähköposti" />
+                            </div>
+                            <div class="checkboxrow">
+                                <div class="formcolumn checkboxcolumn">
+                                    <p><big>Palvelu</big></p>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option1" name="option1" />
+                                        <label for="option1">Eka</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option2" name="option2" />
+                                        <label for="option2">Toka</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option3" name="option3" />
+                                        <label for="option3">Kolmas</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option4" name="option4" />
+                                        <label for="option4">Neljäs</label>
+                                    </div>
+                                </div>
+                                <div class="formcolumn checkboxcolumn">
+                                    <p><big>Olen kiinnostunut myös</big></p>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option5" name="option5" />
+                                        <label for="option5">Videokuvaus</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option6" name="option6" />
+                                        <label for="option6">Meikkaaja/stylisti</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option7" name="option7" />
+                                        <label for="option7">Toimittaja/copywriter</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option8" name="option8" />
+                                        <label for="option8">Kuvausjärjestelijä</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formcolumn messagecolumn">
+                                <label for="message"><big>Viesti</big></label>
+                                <input type="text" id="message" name="message" />
+                            </div>
+                            <input type="submit" class="submitbutton" value="Lähetä" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerlogo">
+            <img id="footerimage" src="/images/logo-light.png" alt="" />
+        </div>
+
+        <div class="footerlinks">
+            <p>&copy; Sininen Kuva 2024 | All rights reserved</p>
+            <p>page by Veikko Milton</p>
+        </div>
+    </footer>
+
+    <script>
+        let dropdownVisible = false;
+
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            const overlay = document.querySelector('.overlay');
+
+            dropdownVisible = !dropdownVisible;
+
+            if (dropdownVisible) {
+                dropdown.classList.add('open');
+                overlay.classList.add('visible');
+            } else {
+                dropdown.classList.remove('open');
+                overlay.classList.remove('visible');
+            }
+        }
+
+        function closeDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            const overlay = document.querySelector('.overlay');
+
+            dropdownVisible = false;
+            dropdown.classList.remove('open');
+            overlay.classList.remove('visible');
+        }
+
+        document.querySelector('.dropdown nav').addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                closeDropdown();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
