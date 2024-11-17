@@ -190,7 +190,7 @@ main {
 }
 
 .cover {
-    height: 100vh;
+    height: 800px;
     padding: 80px 0;
     width: 100%;
     display: flex;
