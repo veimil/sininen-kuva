@@ -191,6 +191,7 @@ main {
 
 .cover {
     height: 100vh;
+    padding: 80px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -199,7 +200,6 @@ main {
 .kansikuva {
     width: 100%;
     height: auto;
-    padding-top: 80px;
     overflow: hidden;
     z-index: 10;
     /* isommalle */
@@ -225,6 +225,7 @@ main {
     background-color: var(--white);
     background-image: url('/images/abstrakti5.webp');
     background-position: center;
+    transform: none;
     /* transform: translateY(-3rem); */
 
 }
