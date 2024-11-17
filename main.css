@@ -198,12 +198,11 @@ main {
 }
 
 .kansikuva {
-    height: 75%;
+    height: 67%;
     overflow: hidden;
     z-index: 10;
     /* isommalle */
     /* height: 100vh; */
-    filter: var(--filter1);
 }
 
 .kansikuva img {
@@ -219,7 +218,7 @@ main {
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     background-color: var(--white);
     background-image: url('/images/abstrakti5.webp');
