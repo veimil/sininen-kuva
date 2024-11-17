@@ -190,16 +190,15 @@ main {
 }
 
 .cover {
-    height: 800px;
+    height: 900px;
     padding: 80px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 .kansikuva {
-    height: 100%;
+    height: 75%;
     overflow: hidden;
     z-index: 10;
     /* isommalle */
@@ -225,7 +224,6 @@ main {
     background-color: var(--white);
     background-image: url('/images/abstrakti5.webp');
     background-position: center;
-    position: absolute;
     bottom: 0;
 
 }
