@@ -219,7 +219,7 @@ main {
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    padding-top: 3rem;
+    padding-top: 1rem;
     padding-bottom: 5rem;
     background-color: var(--white);
     background-image: url('/images/abstrakti5.webp');
