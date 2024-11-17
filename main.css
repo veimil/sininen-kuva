@@ -203,12 +203,12 @@ main {
     z-index: 10;
     /* isommalle */
     /* height: 100vh; */
-
+    filter: var(--filter1);
 }
 
 .kansikuva img {
     width: 100%;
-    height: auto;
+    height: 100%;
     /*toisin päin isommalle */
     /* max-height: calc(100vh - 85px); */
     object-fit: cover;
@@ -218,12 +218,13 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-grow: 1;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
     background-color: var(--white);
     background-image: url('/images/abstrakti5.webp');
     background-position: center;
-    transform: translateY(-3rem);
+    /* transform: translateY(-3rem); */
    
 }
 
