@@ -35,16 +35,15 @@ body {
     font-size: 1.4rem;
     color: var(--text-color);
     background-color: black;
-    font-weight: 400;
     overflow-x: hidden;
 }
 
 h1,
 h2 {
     font-size: 3.5rem;
-    font-weight: 400;
     color: var(--white);
     text-align: center;
+    font-weight: 400;
 }
 
 a {
