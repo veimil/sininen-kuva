@@ -191,16 +191,24 @@ main {
     overflow: hidden;
 }
 
-.cover {
-    height: 100svh;
-    padding-top: 80px;
+.cover{
+    height: 100lvh;
     width: 100%;
+    background-color: black;
+}
+
+.coveritems {
+    height: 100svh;
+    width: 100%;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
+    background-color: var(--white);
 }
 
 .kansikuva {
-    height: 50%;
+    width: 100%;
+    height: 60%;
     overflow: hidden;
     z-index: 10;
     /* isommalle */
@@ -219,13 +227,13 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-grow: 1;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
-    background-color: var(--white);
-    background-image: url('/images/abstrakti5.webp');
+    align-items: center;
+    
+    /* padding-top: 2rem;
+    padding-bottom: 5rem; */
+    background-image: linear-gradient(rgb(167, 214, 255), rgb(205, 232, 255));
     background-position: center;
-    bottom: 0;
+    flex-grow: 1;
 
 }
 
@@ -236,7 +244,7 @@ main {
     background-color: rgba(255, 255, 255, 0.2);
     height: fit-content;
     width: fit-content;
-    padding: 3rem;
+    padding: 2rem;
     z-index: 10;
     border-radius: 25px;
     margin: 1rem;
