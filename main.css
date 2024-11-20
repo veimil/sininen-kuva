@@ -191,15 +191,13 @@ main {
     overflow: hidden;
 }
 
-.cover{
+.cover {
     height: 100lvh;
-    width: 100%;
     background-color: black;
 }
 
 .coveritems {
     height: 100svh;
-    width: 100%;
     padding-top: 80px;
     display: flex;
     flex-direction: column;
@@ -223,11 +221,10 @@ main {
 }
 
 .vali {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     /* padding-top: 2rem;
     padding-bottom: 5rem; */
     background-color: var(--white);
@@ -242,7 +239,6 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
-    height: fit-content;
     width: fit-content;
     padding: 2rem;
     z-index: 10;
@@ -252,11 +248,9 @@ main {
 }
 
 .portfolio {
-    padding-top: 3rem;
+    /* padding-top: 1rem; */
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: auto;
     /* justify-content: center;
     align-items: center; */
     /* gap: 100px; */
@@ -275,7 +269,8 @@ main {
     width: 100vw;
     align-items: center;
     scrollbar-width: none;
-    padding: 1rem 0;
+    padding: 3rem 0;
+    background-color: #151515;
 }
 
 .imggrid::-webkit-scrollbar {
@@ -289,13 +284,12 @@ main {
     /* Prevents images from resizing */
     width: 100vw;
     /* Each image takes up the full viewport width */
-    height: auto;
-    /* Maintains aspect ratio without stretching vertically */
     height: 100%;
     /* max-height: 100%; */
     /* Ensures the image doesn't exceed container height */
     object-fit: contain;
     margin: 0 100px;
+   
 }
 
 .dot-container {
@@ -319,7 +313,6 @@ main {
 
 .additionalpics {
     display: flex;
-    width: 100%;
     height: 100vw;
     margin-top: 6rem;
     overflow: hidden;
@@ -351,20 +344,19 @@ main {
     height: 12rem;
     display: flex;
     background-size: cover;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.buttondiv a {
+.custombutton {
     padding: 0.8rem 1.6rem;
     border-bottom: 3px solid white;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.buttondiv a:active {
+.custombutton:active {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -376,8 +368,6 @@ main {
 
 .about,
 .aboutinner {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -400,7 +390,6 @@ main {
 }
 
 .aboutimg {
-    width: 100%;
     margin-top: 1.5rem;
     overflow: hidden;
     /* height: auto; */
@@ -417,28 +406,27 @@ main {
 .aboutimg2 {
     background-color: black;
 }
-
+/* 
 .aboutlink {
-    width: 100%;
     background-color: black;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 /* .about .seemore {
     height: 20vh;
 } */
 
-.about .buttondiv a {
+.about .custombutton {
     background-color: rgba(255, 255, 255, 0.5);
     color: black;
     border-bottom: 4px solid white;
 
 }
 
-.about .buttondiv a:active{
+.about .custombutton:active {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -456,8 +444,6 @@ main {
 
 .gallerypreview {
     padding: 0.5rem 0;
-    width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -468,10 +454,7 @@ main {
 .scrollcontainer1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    /* height: 45vh; */
+    /* justify-content: center; */
     gap: 0.5rem;
     overflow: hidden;
 }
@@ -485,9 +468,7 @@ main {
 .scrollcontainer2 {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: auto;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 0.5rem;
     overflow: hidden;
 }
@@ -496,34 +477,24 @@ main {
     object-fit: cover;
     width: 100%;
     /* border-radius: 10px; */
-
-
 }
 
 .contact {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    padding-bottom: 3rem;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* padding: 1rem; */
     /* background-color: #6282b3; */
-
 }
 
-.contact h2 {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-}
 
 .headerandsocials {
     display: flex;
     flex-direction: column;
     /* gap: 3rem; */
-    margin-bottom: 3rem;
-    padding-top: 1rem;
+    padding: 3rem 0;
+    padding-top: 4rem;
 }
 
 .socials {
@@ -532,22 +503,10 @@ main {
     gap: 1rem;
 }
 
-.contactdiv {
-    width: 100%;
-}
 
 .contactsvg {
     height: 3.5rem;
     width: 3.5rem;
-    padding: 0rem;
-    display: flex;
-    justify-content: center;
-}
-
-
-.contactsvg a {
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -558,34 +517,30 @@ main {
 }
 
 
-.contactinfo {
-    /* height: 100%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: calc(90vw - 2rem);
-    margin: 0 auto;
+.infobox {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vw - 4rem);
+    margin: 2rem;
     /* border-radius: 25px; */
-    gap: 1.5rem;
-    padding: 1.7rem;
+    gap: 1rem;
     border: 3px solid rgb(100, 185, 255);
-
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 4rem;
     border-radius: 25px;
 }
 
-.itemandtext {
-    display: flex;
-    /* flex-direction: column; */
-    margin: 0 auto;
-    gap: 1rem;
+.infoboxitem {
     color: var(--white);
-    /* padding: 1rem 2rem; */
 
+}
+
+.infobutton{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.6rem;
+    border-radius: 10px;
 }
 
 .contactinfo a,
@@ -597,11 +552,9 @@ main {
     border: 2px solid white;
 }
 
-.form-container {
+.formcontainer {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 2rem);
-    margin: 0 auto;
     justify-content: center;
     align-items: center;
     /* background-position: center;
@@ -610,8 +563,8 @@ main {
     background-color: rgb(230, 244, 255);
     /* background-color: #add3ff; */
     /* border: 0.5rem solid aliceblue; */
-    border-radius: 25px;
-    padding: 1.5rem 2rem;
+    padding:2rem;
+    margin-top: 1rem;
 
 }
 
@@ -628,7 +581,6 @@ form {
 .basicinputs {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .formcolumn {
@@ -677,7 +629,6 @@ input[type="submit"] {
 }
 
 .inputcolumn {
-    width: 100%;
     gap: 1rem;
 }
 
@@ -690,7 +641,6 @@ input[type="submit"] {
 }
 
 .messagecolumn {
-    width: 100%;
     height: 100px;
     margin-top: 1rem;
 }
@@ -729,7 +679,7 @@ footer {
     /* height: 33vh; */
     align-items: center;
     justify-content: center;
-    background-color: var(--footer-color);
+    /* background-color: var(--footer-color); */
     padding: 3rem 0;
 }
 
@@ -781,7 +731,7 @@ footer p {
         height: 550px;
     }
 
-    .additionalpics{
+    .additionalpics {
         width: 500px;
         height: 500px;
         margin: 8rem auto;
@@ -836,13 +786,14 @@ footer p {
         font-size: 1.6rem;
     }
 
-    .seemore{
+    .seemore {
         height: 33vh;
     }
 
-    .about .seemore{
+    .about .seemore {
         height: 25vh;
     }
+
     .headerandsocials {
         margin-bottom: 4rem;
     }
@@ -880,9 +831,7 @@ footer p {
         color: rgb(255, 255, 255);
     }
 
-    .seemore {
-        
-    }
+    .seemore {}
 
     .textcolumn {
         padding: 2rem 2.5rem;
