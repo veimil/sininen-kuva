@@ -8,9 +8,11 @@ function toggleDropdown() {
 
     if (dropdownVisible) {
         dropdown.classList.add('open');
+        dropdown.classList.remove('closed');
         overlay.classList.add('visible');
     } else {
         dropdown.classList.remove('open');
+        dropdown.classList.add('closed');
         overlay.classList.remove('visible');
     }
 }
@@ -21,6 +23,7 @@ function closeDropdown() {
 
     dropdownVisible = false;
     dropdown.classList.remove('open');
+    dropdown.classList.add('closed');
     overlay.classList.remove('visible');
 }
 

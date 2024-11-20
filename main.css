@@ -134,8 +134,19 @@ nav ul a {
     padding-left: 2rem;
     color: var(--white);
     position: relative;
-
+    opacity: 0;
+    /* transform: translateY(-1rem); */
+    transition: opacity 0.5s 0.1s;
 }
+/* nav ul li:first-child a{
+    transition-delay: 0.1s;
+}
+nav ul li:nth-child(2) a{
+    transition-delay: 0.2s;
+}
+nav ul li:nth-child(3) a{
+    transition-delay: 0.3s;
+} */
 
 /* nav ul a::after {
     content: '';
@@ -162,6 +173,15 @@ nav ul a:active {
 
 .open {
     height: 20rem;
+}
+
+.open nav ul a{
+    opacity: 1;
+}
+
+.closed nav ul a{
+    opacity: 0;
+    transition: none;
 }
 
 .overlay {
@@ -369,7 +389,7 @@ main {
     align-items: center;
     background-color: var(--white);
     /* background-color: rgb(195, 218, 243); */
-    background-color: rgb(211, 229, 246);
+    background-color: rgb(222, 236, 247);
 }
 
 .textcolumn {
@@ -381,7 +401,7 @@ main {
     padding: 0.7rem 1.6rem;
     padding-bottom: 1rem;
     /* background-color: #6282b3; */
-    /* filter: var(--filter1); */
+    filter: var(--filter1);
 }
 
 .aboutimg {
