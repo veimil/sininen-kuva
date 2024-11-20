@@ -258,9 +258,11 @@ main {
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     background-color: black;
     overflow: hidden;
+    background-color: #111111;
+
 }
 
-.imggrid {
+.imgscroll {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -269,15 +271,14 @@ main {
     width: 100vw;
     align-items: center;
     scrollbar-width: none;
-    padding: 3rem 0;
-    background-color: #151515;
+    padding: 2rem 0;
 }
 
-.imggrid::-webkit-scrollbar {
+.imgscroll::-webkit-scrollbar {
     display: none;
 }
 
-.imggrid img {
+.imgscroll img {
     scroll-snap-align: center;
     scroll-snap-stop: always;
     flex: none;
@@ -289,7 +290,7 @@ main {
     /* Ensures the image doesn't exceed container height */
     object-fit: contain;
     margin: 0 100px;
-   
+
 }
 
 .dot-container {
@@ -406,6 +407,7 @@ main {
 .aboutimg2 {
     background-color: black;
 }
+
 /* 
 .aboutlink {
     background-color: black;
@@ -537,7 +539,7 @@ main {
 
 }
 
-.infobutton{
+.infobutton {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 0.8rem 1.6rem;
     border-radius: 10px;
@@ -563,7 +565,7 @@ main {
     background-color: rgb(230, 244, 255);
     /* background-color: #add3ff; */
     /* border: 0.5rem solid aliceblue; */
-    padding:2rem;
+    padding: 2rem;
     margin-top: 1rem;
 
 }
@@ -727,7 +729,7 @@ footer p {
         font-size: 4rem;
     }
 
-    .imggrid {
+    .imgscroll {
         height: 550px;
     }
 
