@@ -192,7 +192,7 @@ main {
 }
 
 .cover {
-    height: 100svh;
+    height: 100vh;
     padding-top: 80px;
     width: 100%;
     display: flex;
@@ -200,7 +200,7 @@ main {
 }
 
 .kansikuva {
-    height: 65%;
+    height: 50%;
     overflow: hidden;
     z-index: 10;
     /* isommalle */
