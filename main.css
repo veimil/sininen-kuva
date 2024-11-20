@@ -192,7 +192,7 @@ main {
 }
 
 .cover {
-    height: 100vh;
+    height: 100svh;
     padding-top: 80px;
     width: 100%;
     display: flex;
