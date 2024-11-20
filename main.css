@@ -203,12 +203,11 @@ main {
     padding-top: 80px;
     display: flex;
     flex-direction: column;
-    background-color: var(--white);
 }
 
 .kansikuva {
     width: 100%;
-    height: 60%;
+    height: 67%;
     overflow: hidden;
     z-index: 10;
     /* isommalle */
@@ -231,7 +230,8 @@ main {
     
     /* padding-top: 2rem;
     padding-bottom: 5rem; */
-    background-image: linear-gradient(rgb(167, 214, 255), rgb(205, 232, 255));
+    background-color: var(--white);
+    background-image: linear-gradient(to bottom left, rgb(200, 225, 255), rgb(169, 207, 255));
     background-position: center;
     flex-grow: 1;
 
@@ -252,10 +252,11 @@ main {
 }
 
 .portfolio {
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-top: 80px;
+    height: auto;
     /* justify-content: center;
     align-items: center; */
     /* gap: 100px; */
@@ -263,7 +264,6 @@ main {
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     background-color: black;
     overflow: hidden;
-    background-image: linear-gradient(#161616, black);
 }
 
 .imggrid {
@@ -272,14 +272,14 @@ main {
     scroll-snap-type: x mandatory;
     scroll-behavior: auto;
     height: 500px;
-    /* Fixed height for the container */
     width: 100vw;
-    /* Spans the viewport width */
     align-items: center;
-    /* Centers images vertically within the container */
     scrollbar-width: none;
-    /* Hide scrollbar in Firefox */
     padding: 1rem 0;
+}
+
+.imggrid::-webkit-scrollbar {
+    display: none;
 }
 
 .imggrid img {
@@ -296,12 +296,6 @@ main {
     /* Ensures the image doesn't exceed container height */
     object-fit: contain;
     margin: 0 100px;
-    /* Ensures the entire image is visible */
-}
-
-/* Optional: Hide scrollbar for a cleaner look */
-.imggrid::-webkit-scrollbar {
-    display: none;
 }
 
 .dot-container {
@@ -327,9 +321,9 @@ main {
     display: flex;
     width: 100%;
     height: 100vw;
-    margin-top: 8rem;
+    margin-top: 6rem;
     overflow: hidden;
-    gap: 3px;
+    gap: 0.5rem;
 }
 
 .additionalpics img {
@@ -338,53 +332,43 @@ main {
     object-fit: cover;
 }
 
-
 .imgcolumn {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 50%;
-    gap: 3px;
+    gap: 0.5rem;
 }
 
 .imgcolumn img {
     width: 100%;
-    height: 40%;
+    height: 50%;
     object-fit: cover;
-    flex-grow: 1;
 }
 
-/* .additionalpics img:first-child {
-    width: 45%;
-}
 
-.additionalpics img:nth-child(2) {
-
-    width: 55%;
-} */
-
-.seemore {
-    height: 100dvh;
+.buttondiv {
+    height: 12rem;
     display: flex;
     background-size: cover;
     width: 100%;
-}
-
-.seemore a {
-    padding: 0.8rem 1.6rem;
-    border-bottom: 3px solid white;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.buttondiv a {
+    padding: 0.8rem 1.6rem;
+    border-bottom: 3px solid white;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-
-.seemore a:active {
-    transform: scale(0.95);
+.buttondiv a:active {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* .seemore:hover {
+/* .buttondiv:hover {
     background-color: var(--button-color-hover);
     transform: translateY(-3px);
 } */
@@ -393,6 +377,7 @@ main {
 .about,
 .aboutinner {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -416,14 +401,16 @@ main {
 
 .aboutimg {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     overflow: hidden;
     /* height: auto; */
 }
 
 .aboutimg img {
     width: 100%;
+    height: 100%;
     border-radius: inherit;
+    object-fit: cover;
 }
 
 
@@ -440,15 +427,19 @@ main {
     align-items: center;
 }
 
-.about .seemore {
+/* .about .seemore {
     height: 20vh;
-}
+} */
 
-.about .seemore a {
+.about .buttondiv a {
     background-color: rgba(255, 255, 255, 0.5);
     color: black;
     border-bottom: 4px solid white;
 
+}
+
+.about .buttondiv a:active{
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* .screenshotcontainer {
@@ -464,11 +455,12 @@ main {
 
 
 .gallerypreview {
+    padding: 0.5rem 0;
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
+    gap: 0.5rem;
     /* max-width: 100%; */
 }
 
@@ -480,7 +472,7 @@ main {
     width: 100%;
     height: auto;
     /* height: 45vh; */
-    gap: 0.2rem;
+    gap: 0.5rem;
     overflow: hidden;
 }
 
@@ -496,7 +488,7 @@ main {
     width: 100%;
     height: auto;
     justify-content: center;
-    gap: 0.1rem;
+    gap: 0.5rem;
     overflow: hidden;
 }
 
@@ -510,6 +502,7 @@ main {
 
 .contact {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
