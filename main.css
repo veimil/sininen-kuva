@@ -115,7 +115,7 @@ header {
     flex-direction: column;
     /* transition: width 0.2s; */
     transition: height 0.4s cubic-bezier(0, .85, .23, 1);
-    background-color: #111111;
+    background-color: #080808;
     z-index: 1000;
 }
 
@@ -170,7 +170,7 @@ nav ul a:active {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(139, 201, 254, 0.1);
+    background-color: rgba(222, 222, 222, 0.1);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
     z-index: 500;
@@ -256,9 +256,8 @@ main {
     /* gap: 100px; */
     /* padding: 80px; */
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
-    background-color: black;
     overflow: hidden;
-    background-color: #0a0a0a;
+    background-color: #080808;
 
 }
 
@@ -357,10 +356,6 @@ main {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.custombutton:active {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
 /* .buttondiv:hover {
     background-color: var(--button-color-hover);
     transform: translateY(-3px);
@@ -426,10 +421,6 @@ main {
     color: black;
     border-bottom: 4px solid white;
 
-}
-
-.about .custombutton:active {
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* .screenshotcontainer {
