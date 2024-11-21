@@ -9,6 +9,9 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="main.css">
 
+    <link rel="preload" as="image" href="/images/sininenkuva.webp">
+    <link rel="preload" as="image" href="/images/logo-light.webp">
+
     <!-- Google Fonts Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +28,11 @@
 <body>
     <header>
         <div class="logocontainer">
-            <img src="/images/logo-light.png" alt="" id="logoimage" />
+            <img src="/images/logo-light.webp" alt="" id="logoimage" />
         </div>
         <div class="nav-wrapper">
             <button class="menu-trigger" onclick="toggleDropdown()">
-                <img src="/images/menu-blue.svg" alt="Menu" />
+                <img class="lazy-image" data-src="/images/menu-blue.svg" alt="Menu" />
             </button>
             <div class="dropdown">
                 <nav>
@@ -55,7 +58,7 @@
             </div>
         </div>
     </header>
-    <div class="overlay" onclick="closeDropdown()"></div>
+    <div class="overlay" onclick="toggleDropdown()"></div>
 
     <main>
         <section class="cover">
@@ -63,27 +66,25 @@
                 <div class="kansikuva">
                     <img src="/images/sininenkuva.webp" alt="Sininen kuva cover" width="450" height="700" />
                 </div>
-                <div class="vali">
-                    <p class="card">
-                        "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
-                        näkee"
-                    </p>
-                </div>
+                <p class="vali">
+                    "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
+                    näkee"
+                </p>
             </div>
         </section>
 
         <section class="portfolio">
             <div class="imgscroll">
-                <img class="auto-scroll-elem" src="/images/press1.webp" alt="Sininen kuva portfolio example" width="400"
-                    height="500" />
-                <img class="auto-scroll-elem" src="/images/press2.webp" alt="Sininen kuva portfolio example" width="400"
-                    height="500" />
-                <img class="auto-scroll-elem" src="/images/press3.webp" alt="Sininen kuva portfolio example" width="400"
-                    height="500" />
-                <img class="auto-scroll-elem" src="/images/press4.webp" alt="Sininen kuva portfolio example" width="400"
-                    height="500" />
-                <img class="auto-scroll-elem" src="/images/press5.webp" alt="Sininen kuva portfolio example" width="400"
-                    height="500" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press1.webp"
+                    alt="Sininen kuva portfolio example" width="400" height="500" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press2.webp"
+                    alt="Sininen kuva portfolio example" width="400" height="500" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press3.webp"
+                    alt="Sininen kuva portfolio example" width="400" height="500" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press4.webp"
+                    alt="Sininen kuva portfolio example" width="400" height="500" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press5.webp"
+                    alt="Sininen kuva portfolio example" width="400" height="500" />
             </div>
             <!-- <div class="dot-container">
                 {#each Array(sections ? sections.length : 0) as _, i}
@@ -93,12 +94,12 @@
 
             <div class="additionalpics">
                 <div class="imgcolumn">
-                    <img class="img1" src="/images/vuokki.webp" alt="Sininen kuva portfolio example" width="600"
-                        height="500" />
-                    <img class="img3" src="/images/people.webp" alt="Sininen kuva portfolio example" width="600"
-                        height="500" />
+                    <img class="lazy-image img1" data-src="/images/vuokki.webp" alt="Sininen kuva portfolio example"
+                        width="600" height="500" />
+                    <img class="lazy-image img3" data-src="/images/people.webp" alt="Sininen kuva portfolio example"
+                        width="600" height="500" />
                 </div>
-                <img class="img2" src="/images/pose.webp" alt="" />
+                <img class="lazy-image img2" data-src="/images/pose.webp" alt="" />
             </div>
             <div class="buttondiv">
                 <a class="custombutton" href="/galleria">Galleria</a>
@@ -121,8 +122,10 @@
                     vuosien varrella saanut erilaisten ihmisten ja yritysten
                     kanssa toimiessani.
                 </p>
-                <div class="aboutimg aboutimg1">
-                    <img src="/images/aboutme.webp" alt="" class="kuvaaja" />
+                <div class="aboutimgcontainer">
+                    <div class="aboutimg aboutimg1">
+                        <img class="lazy-image kuvaaja" data-src="/images/aboutme.webp" alt="" />
+                    </div>
                 </div>
 
                 <!-- <div class="aboutlinks">
@@ -181,11 +184,11 @@
 
         <section class="gallerypreview">
             <div class="scrollcontainer1">
-                <img src="/images/promotion.webp" />
-                <img src="/images/talot.webp" alt="" />
+                <img class="lazy-image" data-src="/images/promotion.webp" />
+                <img class="lazy-image" data-src="/images/talot.webp" alt="" />
             </div>
             <div class="scrollcontainer2">
-                <img src="/images/kruunuvuori.webp" class="model" />
+                <img class="lazy-image" data-src="/images/kruunuvuori.webp" class="model" />
             </div>
         </section>
 
@@ -194,13 +197,13 @@
                 <h2 class="contact-h2">Yhteystiedot</h2>
                 <div class="socials">
                     <a class="contactsvg social" href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/"
-                        target="_blank"><img src="/images/linkkari.svg" alt="" /></a>
+                        target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg" alt="" /></a>
 
                     <a class="contactsvg social" href="https://www.instagram.com/sininenkuva/" target="_blank"><img
-                            src="/images/insta.svg" alt="" /></a>
+                            class="lazy-image" data-src="/images/insta.svg" alt="" /></a>
 
                     <a class="contactsvg social" href="https://www.facebook.com/sininenkuva.fi/" target="_blank"><img
-                            src="/images/face.svg" alt="" /></a>
+                            class="lazy-image" data-src="/images/face.svg" alt="" /></a>
                 </div>
             </div>
             <div class="contactdiv">
@@ -213,74 +216,73 @@
                     </a>
                 </div>
                 <h2>Viesti</h2>
-                <div class="formcontainer">
-                    <form action="">
-                        <div class="basicinputs">
-                            <div class="formcolumn inputcolumn">
-                                <input type="text" id="etunimi" name="etunimi" placeholder="Etunimi" required />
 
-                                <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi" />
+                <form action="">
+                    <div class="formcontent">
+                        <div class="formcolumn inputcolumn">
+                            <input type="text" id="etunimi" name="etunimi" placeholder="Etunimi" required />
 
-                                <input type="text" id="puhelinnumero" name="puhelinnumero"
-                                    placeholder="Puhelinnumero" />
+                            <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi" />
 
-                                <input type="email" id="email" name="email" placeholder="Sähköposti" />
-                            </div>
-                            <div class="checkboxrow">
-                                <div class="formcolumn checkboxcolumn">
-                                    <p><big>Palvelu</big></p>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option1" name="option1" />
-                                        <label for="option1">Eka</label>
-                                    </div>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option2" name="option2" />
-                                        <label for="option2">Toka</label>
-                                    </div>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option3" name="option3" />
-                                        <label for="option3">Kolmas</label>
-                                    </div>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option4" name="option4" />
-                                        <label for="option4">Neljäs</label>
-                                    </div>
-                                </div>
-                                <div class="formcolumn checkboxcolumn">
-                                    <p><big>Olen kiinnostunut myös</big></p>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option5" name="option5" />
-                                        <label for="option5">Videokuvaus</label>
-                                    </div>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option6" name="option6" />
-                                        <label for="option6">Meikkaaja/stylisti</label>
-                                    </div>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option7" name="option7" />
-                                        <label for="option7">Toimittaja/copywriter</label>
-                                    </div>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option8" name="option8" />
-                                        <label for="option8">Kuvausjärjestelijä</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="formcolumn messagecolumn">
-                                <label for="message"><big>Viesti</big></label>
-                                <input type="text" id="message" name="message" />
-                            </div>
-                            <input type="submit" class="submitbutton" value="Lähetä" />
+                            <input type="text" id="puhelinnumero" name="puhelinnumero" placeholder="Puhelinnumero" />
+
+                            <input type="email" id="email" name="email" placeholder="Sähköposti" />
                         </div>
-                    </form>
-                </div>
+                        <div class="checkboxrow">
+                            <div class="formcolumn checkboxcolumn">
+                                <p><big>Palvelu</big></p>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option1" name="option1" />
+                                    <label for="option1">Eka</label>
+                                </div>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option2" name="option2" />
+                                    <label for="option2">Toka</label>
+                                </div>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option3" name="option3" />
+                                    <label for="option3">Kolmas</label>
+                                </div>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option4" name="option4" />
+                                    <label for="option4">Neljäs</label>
+                                </div>
+                            </div>
+                            <div class="formcolumn checkboxcolumn">
+                                <p><big>Olen kiinnostunut myös</big></p>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option5" name="option5" />
+                                    <label for="option5">Videokuvaus</label>
+                                </div>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option6" name="option6" />
+                                    <label for="option6">Meikkaaja/stylisti</label>
+                                </div>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option7" name="option7" />
+                                    <label for="option7">Toimittaja/copywriter</label>
+                                </div>
+                                <div class="checkboxandlabel">
+                                    <input type="checkbox" id="option8" name="option8" />
+                                    <label for="option8">Kuvausjärjestelijä</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formcolumn messagecolumn">
+                            <label for="message"><big>Viesti</big></label>
+                            <input type="text" id="message" name="message" />
+                        </div>
+                        <input type="submit" class="submitbutton" value="Lähetä" />
+                    </div>
+                </form>
+
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footerlogo">
-            <img id="footerimage" src="/images/logo-light.png" alt="" />
+            <img class="lazy-image" id="footerimage" data-src="/images/logo-light.webp" alt="" />
         </div>
 
         <div class="footerlinks">
@@ -290,12 +292,21 @@
     </footer>
 
     <script>
-        window.onload = function () {
-            const element = document.createElement("script");
-            element.src = "koodi.js";
-            document.body.appendChild(element);
-        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.lazy-image');
+
+            images.forEach((img) => {
+                const src = img.getAttribute('data-src');
+                if (src) {
+                    img.src = src;
+                }
+            });
+        });
+
     </script>
+
+    <script src="koodi.js"></script>
 
 </body>
 

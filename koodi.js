@@ -1,3 +1,4 @@
+
 let dropdownVisible = false;
 
 function toggleDropdown() {
@@ -12,7 +13,6 @@ function toggleDropdown() {
         overlay.classList.add('visible');
     } else {
         dropdown.classList.remove('open');
-        dropdown.classList.add('closed');
         overlay.classList.remove('visible');
     }
 }
@@ -24,6 +24,7 @@ function closeDropdown() {
     dropdownVisible = false;
     dropdown.classList.remove('open');
     dropdown.classList.add('closed');
+    overlay.classList.add('closed');
     overlay.classList.remove('visible');
 }
 
