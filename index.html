@@ -292,6 +292,18 @@
     </footer>
 
     <script>
+        function setVH() {
+            const vh100 = window.innerHeight; // Calculate 1vh
+            const vh = window.innerHeight * 0.01; // Calculate 1vh
+            document.documentElement.style.setProperty('--vh100', `${vh100}px`);
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        // Run on load
+        setVH();
+        
+    </script>
+
+    <script>
 
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('.lazy-image');

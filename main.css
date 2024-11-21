@@ -224,7 +224,7 @@ main {
 }
 
 .cover {
-    height: 100vh;
+    height: var(--vh100);
     background-color: #080808;
 }
 
