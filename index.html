@@ -6,33 +6,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sininen Kuva</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="main.css">
-
     <link rel="preload" as="image" href="/images/sininenkuva.webp">
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
-    <!-- Google Fonts Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.png">
+
+    <script>
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --white: #f8f8f8;
+            --filter1: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+            --filter2: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            font-size: 1.3rem;
+            background-color: black;
+            overflow-x: hidden;
+        }
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+        }
+
+        .logocontainer {
+            height: 100%;
+            width: auto;
+            display: flex;
+            align-items: center;
+            align-items: center;
+            padding-left: 1rem;
+        }
+
+        .logocontainer img {
+            height: 37px;
+            width: auto;
+            opacity: 0.9;
+        }
+
+        .nav-wrapper {
+            position: relative;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+        }
+
+        .menu-trigger {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            border: none;
+            padding: 0 1rem;
+        }
+
+        .menu-trigger:hover {
+            cursor: pointer;
+        }
+
+        .menu-trigger img {
+            /* height: 40px; */
+            opacity: 0.9;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+
+        .dropdown {
+            position: absolute;
+            top: 80px;
+            /* height: 100vh;
+    width: 0; */
+            width: 100vw;
+            height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            /* transition: width 0.2s; */
+            transition: height 0.4s cubic-bezier(0, .85, .23, 1);
+            background-color: #080808;
+            z-index: 1000;
+        }
+
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        nav ul a {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-left: 2rem;
+            color: #080808;
+            position: relative;
+            opacity: 0;
+            /* transform: translateY(-1rem); */
+            transition: opacity 0.5s 0.1s;
+
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .cover {
+            height: calc(var(--vh) * 100);
+            background-color: #080808;
+        }
+
+        .coveritems {
+            height: 100%;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kansikuva {
+            width: 100%;
+            height: 67%;
+            overflow: hidden;
+            z-index: 10;
+            /* isommalle */
+            /* height: 100vh; */
+        }
+
+        .kansikuva img {
+            width: 100%;
+            height: 100%;
+            /*toisin päin isommalle */
+            /* max-height: calc(100vh - 85px); */
+            object-fit: cover;
+        }
+
+        .vali {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-image: linear-gradient(to bottom left, rgb(200, 225, 255), rgb(169, 207, 255)); */
+            background-color: var(--white);
+            flex-grow: 1;
+            bottom: 0;
+            padding: 0 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    </style>
+
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="main.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="main.css">
+    </noscript>
+
 </head>
 
 
 <body>
     <header>
         <div class="logocontainer">
-            <img src="/images/logo-light.webp" alt="" id="logoimage" />
+            <img src="/images/logo-light.webp" alt="Sininen Kuva logo" id="logoimage" width="700" height="159" />
         </div>
         <div class="nav-wrapper">
             <button class="menu-trigger" onclick="toggleDropdown()">
-                <img class="lazy-image" data-src="/images/menu-blue.svg" alt="Menu" />
+                <img src="/images/menu-blue.svg" alt="menu icon" width="40" height="40" />
             </button>
             <div class="dropdown">
                 <nav>
@@ -64,7 +248,7 @@
         <section class="cover">
             <div class="coveritems">
                 <div class="kansikuva">
-                    <img src="/images/sininenkuva.webp" alt="Sininen kuva cover" width="450" height="700" />
+                    <img src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177" height="3094" />
                 </div>
                 <p class="vali">
                     "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
@@ -75,16 +259,16 @@
 
         <section class="portfolio">
             <div class="imgscroll">
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press1.webp"
-                    alt="Sininen kuva portfolio example" width="400" height="500" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press2.webp"
-                    alt="Sininen kuva portfolio example" width="400" height="500" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press3.webp"
-                    alt="Sininen kuva portfolio example" width="400" height="500" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press4.webp"
-                    alt="Sininen kuva portfolio example" width="400" height="500" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press5.webp"
-                    alt="Sininen kuva portfolio example" width="400" height="500" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press1.webp" alt="Press image example"
+                    width="1328" height="1769" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press2.webp" alt="Press image example"
+                    width="2690" height="3045" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press3.webp" alt="Press image example"
+                    width="1222" height="1564" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press4.webp" alt="Press image example"
+                    width="1754" height="2256" />
+                <img class="lazy-image auto-scroll-elem" data-src="/images/press5.webp" alt="Press image example"
+                    width="1187" height="1544" />
             </div>
             <!-- <div class="dot-container">
                 {#each Array(sections ? sections.length : 0) as _, i}
@@ -94,12 +278,13 @@
 
             <div class="additionalpics">
                 <div class="imgcolumn">
-                    <img class="lazy-image img1" data-src="/images/vuokki.webp" alt="Sininen kuva portfolio example"
-                        width="600" height="500" />
-                    <img class="lazy-image img3" data-src="/images/people.webp" alt="Sininen kuva portfolio example"
-                        width="600" height="500" />
+                    <img class="lazy-image img1" data-src="/images/laajasalo.webp" alt="Portfolio picture example"
+                        width="5591" height="3727" />
+                    <img class="lazy-image img3" data-src="/images/people.webp" alt="Portfolio picture example"
+                        width="5281" height="3520" />
                 </div>
-                <img class="lazy-image img2" data-src="/images/pose.webp" alt="" />
+                <img class="lazy-image img2" data-src="/images/pose.webp" alt="Portfolio picture example" width="3626"
+                    height="5565" />
             </div>
             <div class="buttondiv">
                 <a class="custombutton" href="/galleria">Galleria</a>
@@ -124,7 +309,8 @@
                 </p>
                 <div class="aboutimgcontainer">
                     <div class="aboutimg aboutimg1">
-                        <img class="lazy-image kuvaaja" data-src="/images/aboutme.webp" alt="" />
+                        <img class="lazy-image kuvaaja" data-src="/images/aboutme.webp"
+                            alt="Sini Pennanen profile picture" width="2453" height="3112" />
                     </div>
                 </div>
 
@@ -184,11 +370,14 @@
 
         <section class="gallerypreview">
             <div class="scrollcontainer1">
-                <img class="lazy-image" data-src="/images/promotion.webp" />
-                <img class="lazy-image" data-src="/images/talot.webp" alt="" />
+                <img class="lazy-image" data-src="/images/promotion.webp" alt="Gallery image about song contest"
+                    width="5616" height="3744" />
+                <img class="lazy-image" data-src="/images/talot.webp" alt="Gallery image about buildings" width="3416"
+                    height="2124" />
             </div>
             <div class="scrollcontainer2">
-                <img class="lazy-image" data-src="/images/kruunuvuori.webp" class="model" />
+                <img class="lazy-image" data-src="/images/kruunuvuori.webp" alt="Gallery image from Kruunuvuorenranta"
+                    width="5712" height="3808" />
             </div>
         </section>
 
@@ -197,13 +386,14 @@
                 <h2 class="contact-h2">Yhteystiedot</h2>
                 <div class="socials">
                     <a class="contactsvg social" href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/"
-                        target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg" alt="" /></a>
+                        target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg"
+                            alt="LinkedIn logo" /></a>
 
                     <a class="contactsvg social" href="https://www.instagram.com/sininenkuva/" target="_blank"><img
-                            class="lazy-image" data-src="/images/insta.svg" alt="" /></a>
+                            class="lazy-image" data-src="/images/insta.svg" alt="Instagram logo" /></a>
 
                     <a class="contactsvg social" href="https://www.facebook.com/sininenkuva.fi/" target="_blank"><img
-                            class="lazy-image" data-src="/images/face.svg" alt="" /></a>
+                            class="lazy-image" data-src="/images/face.svg" alt="Facebook logo" /></a>
                 </div>
             </div>
             <div class="contactdiv">
@@ -282,7 +472,8 @@
 
     <footer>
         <div class="footerlogo">
-            <img class="lazy-image" id="footerimage" data-src="/images/logo-light.webp" alt="" />
+            <img class="lazy-image" id="footerimage" data-src="/images/logo-light.webp" alt="Sininen Kuva logo"
+                width="700" height="159" />
         </div>
 
         <div class="footerlinks">
@@ -292,20 +483,13 @@
     </footer>
 
     <script>
-        function setVH() {
-            const vh100 = window.innerHeight; // Calculate 1vh
-            const vh = window.innerHeight * 0.01; // Calculate 1vh
-            document.documentElement.style.setProperty('--vh100', `${vh100}px`);
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        // Run on load
-        setVH();
-        
+
     </script>
 
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
+
             const images = document.querySelectorAll('.lazy-image');
 
             images.forEach((img) => {
@@ -318,7 +502,7 @@
 
     </script>
 
-    <script src="koodi.js"></script>
+    <script src="koodi.js" defer></script>
 
 </body>
 
