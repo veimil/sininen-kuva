@@ -191,7 +191,8 @@ h2 {
 .custombutton {
     padding: 0.8rem 1.6rem;
     margin: auto;
-    border: 1px solid var(--white);
+    background-color: #080808;
+    filter: drop-shadow(0px 0px 56px white);
 }
 
 /* .buttondiv:hover {
@@ -229,11 +230,13 @@ h2 {
     margin-top: 1.5rem;
     overflow: hidden;
     filter: var(--filter1);
+    display: flex;
+    justify-content: center;
 }
 
 .aboutimg img {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: inherit;
     object-fit: cover;
 }
@@ -327,8 +330,8 @@ h2 {
     display: flex;
     flex-direction: column;
     /* gap: 3rem; */
-    padding: 3rem 0;
     padding-top: 4rem;
+    padding-bottom: 3rem;
 }
 
 .socials {
@@ -541,10 +544,6 @@ footer p {
         font-size: 4rem;
     }
 
-    .imgscroll {
-        height: 550px;
-    }
-
     .additionalpics {
         width: 500px;
         height: 500px;
@@ -569,6 +568,7 @@ footer p {
         width: 65%;
         height: 500px;
         margin-top: 3rem;
+        margin-bottom: 1rem;
         filter: var(--filter1);
         background-color: var(--white);
     }
@@ -596,11 +596,8 @@ footer p {
     }
 
     .headerandsocials {
-        margin-bottom: 4rem;
-    }
-
-    .contact h2 {
-        margin-top: 4rem;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
     }
 
     .contactsvg {
@@ -609,13 +606,16 @@ footer p {
     }
 
     .infobox {
-        width: 75%;
-        height: 75vw;
-        margin: 1rem auto;
+        width: 67%;
+        height: 67vw;
+        margin: 0 auto;
+        margin-bottom: 5rem;
     }
 
-    .form-container {
+    form {
+        margin-top: 2rem;
         padding: 2rem 3rem;
+        border-top: 2rem;
 
     }
 
@@ -632,8 +632,6 @@ footer p {
         color: rgb(255, 255, 255);
     }
 
-    .seemore {}
-
     .textcolumn {
         padding: 2rem 2.5rem;
         padding-bottom: 3rem;
@@ -646,14 +644,8 @@ footer p {
     }
 
     .infobox {
-        width: 60%;
-        height: 60vw;
-        margin: 1rem auto;
-    }
-
-    .form-container {
-        width: 80%;
-        margin: 2rem auto;
+        width: 50%;
+        height: 50vw;
     }
 
 
