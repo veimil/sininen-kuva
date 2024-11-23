@@ -313,7 +313,7 @@ h2 {
     background-image:
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
         repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem);
-    s
+    
 }
 
 
@@ -385,7 +385,7 @@ form {
     align-items: center;
     gap: 2rem;
     background-color: rgb(230, 244, 255);
-    background-color: powderblue;
+    background-color: rgb(186, 234, 241);
     padding: 2rem 3rem;
     margin-top: 1rem;
 }
@@ -577,6 +577,7 @@ footer p {
 
     .custombutton {
         padding: 1rem 2rem;
+        border-radius: 10px;
     }
 
     .headerandsocials {
