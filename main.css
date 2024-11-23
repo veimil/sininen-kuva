@@ -384,8 +384,8 @@ form {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background-color: rgb(230, 244, 255);
-    background-color: rgb(186, 234, 241);
+    background-color: rgb(220, 239, 255);
+    
     padding: 2rem 3rem;
     margin-top: 1rem;
 }
