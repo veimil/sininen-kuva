@@ -94,9 +94,6 @@ h2 {
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     overflow: hidden;
     background-color: #080808;
-    background-image:
-        repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
-        repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem);
     padding-top: 3rem;
 
 }
@@ -195,7 +192,7 @@ h2 {
     padding: 0.8rem 1.6rem;
     margin: auto;
     background-color: #080808;
-    filter: drop-shadow(0px 0px 56px white);
+    filter: drop-shadow(0px 0px 33px rgb(225, 225, 225));
 }
 
 /* .buttondiv:hover {
@@ -315,7 +312,8 @@ h2 {
     /* background-color: #6282b3; */
     background-image:
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
-        repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem);s
+        repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem);
+    s
 }
 
 
@@ -654,10 +652,12 @@ footer p {
     .kansikuva {
         height: 100%;
     }
-    header{
+
+    header {
         height: 100px;
     }
-    .dropdown{
+
+    .dropdown {
         top: 100px;
     }
 
@@ -680,12 +680,13 @@ footer p {
         width: 100%;
         gap: 1rem;
     }
-    .imgcolumn{
+
+    .imgcolumn {
         gap: 1rem;
         height: 100%;
     }
 
-    .aboutinner{
+    .aboutinner {
         flex-direction: row;
     }
 }
