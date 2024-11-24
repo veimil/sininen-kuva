@@ -200,6 +200,16 @@
             font-size: 1.5rem;
             text-align: center;
         }
+
+        @media (min-width: 1024px) {
+            .kansikuva {
+                height: 100%;
+            }
+
+            .vali {
+                display: none;
+            }
+        }
     </style>
 
     <!-- Non-critical CSS -->
@@ -260,17 +270,19 @@
         </section>
 
         <section class="portfolio">
-            <div class="imgscroll">
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press1.webp" alt="Press image example"
-                    width="1328" height="1769" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press2.webp" alt="Press image example"
-                    width="2690" height="3045" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press3.webp" alt="Press image example"
-                    width="1222" height="1564" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press4.webp" alt="Press image example"
-                    width="1754" height="2256" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/press5.webp" alt="Press image example"
-                    width="1187" height="1544" />
+            <div class="imgscroll-container">
+                <div class="imgscroll">
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/press1.webp" alt="Press image example"
+                        width="1328" height="1769" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/press2.webp" alt="Press image example"
+                        width="2690" height="3045" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/press3.webp" alt="Press image example"
+                        width="1222" height="1564" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/press4.webp" alt="Press image example"
+                        width="1754" height="2256" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/press5.webp" alt="Press image example"
+                        width="1187" height="1544" />
+                </div>
             </div>
             <!-- <div class="dot-container">
                 {#each Array(sections ? sections.length : 0) as _, i}
@@ -278,15 +290,17 @@
                 {/each}
             </div> -->
 
-            <div class="additionalpics">
-                <div class="imgcolumn">
-                    <img class="lazy-image img1" data-src="/images/laajasalo.webp" alt="Portfolio picture example"
-                        width="5591" height="3727" />
-                    <img class="lazy-image img3" data-src="/images/people.webp" alt="Portfolio picture example"
-                        width="5281" height="3520" />
+            <div class="additionalpics-container">
+                <div class="additionalpics">
+                    <div class="imgcolumn">
+                        <img class="lazy-image img1" data-src="/images/laajasalo.webp" alt="Portfolio picture example"
+                            width="5591" height="3727" />
+                        <img class="lazy-image img3" data-src="/images/people.webp" alt="Portfolio picture example"
+                            width="5281" height="3520" />
+                    </div>
+                    <img class="lazy-image img2" data-src="/images/pose.webp" alt="Portfolio picture example"
+                        width="3626" height="5565" />
                 </div>
-                <img class="lazy-image img2" data-src="/images/pose.webp" alt="Portfolio picture example" width="3626"
-                    height="5565" />
             </div>
             <div class="buttondiv">
                 <a class="custombutton" href="/galleria">Galleria</a>
@@ -302,18 +316,13 @@
                     saamiseksi? Olet juuri oikeassa paikassa, lämpimästi tervetuloa
                     kuvien maailmaan!
                 </p>
-                <p class="textcolumn">
+                <p class="textcolumn textcolumn2">
                     Sininen Kuva on täyden palvelun laatustudio, jonka perustaja
                     olen minä, valokuvaaja Sini Pennanen. Sininen kuva tarjoaa
                     käyttöösi kaiken osaamiseni ja kokemukseni, joita olen
                     vuosien varrella saanut erilaisten ihmisten ja yritysten
                     kanssa toimiessani.
                 </p>
-
-                <div class="aboutimg aboutimg1">
-                    <img class="lazy-image kuvaaja" data-src="/images/aboutme.webp" alt="Sini Pennanen profile picture"
-                        width="2453" height="3112" />
-                </div>
 
 
                 <!-- <div class="aboutlinks">
@@ -334,39 +343,45 @@
                         </div> -->
             </div>
             <div class="aboutinner aboutinner2">
-
-                <p class="textcolumn textcolumn3">
-                    <span style="font-weight: bold; font-size: larger;">Kuvaan</span>
-                    useille Suomen johtaville yrityksille, sekä mainos- ja viestintätoimistoille
-                    ja lehtitaloille mainontaa ja lehtikuvia. Töitäni voit nähdä
-                    muun muassa aikakausi- ja asiakaslehdissä sekä mainoksissa Suomessa
-                    ja muualla Euroopassa.
-                    <!-- Aloitin valokuvamallina v. 1996 ja siirryin sujuvasti
+                <div class="aboutimg aboutimg1">
+                    <img class="lazy-image kuvaaja" data-src="/images/aboutme.webp" alt="Sini Pennanen profile picture"
+                        width="2453" height="3112" />
+                </div>
+                <div class="textcolumncontainer">
+                    <p class="textcolumn textcolumn3">
+                        <span style="font-weight: bold; font-size: larger;">Kuvaan</span>
+                        useille Suomen johtaville yrityksille, sekä mainos- ja viestintätoimistoille
+                        ja lehtitaloille mainontaa ja lehtikuvia. Töitäni voit nähdä
+                        muun muassa aikakausi- ja asiakaslehdissä sekä mainoksissa Suomessa
+                        ja muualla Euroopassa.
+                        <!-- Aloitin valokuvamallina v. 1996 ja siirryin sujuvasti
                         kameran toiselle puolelle v. 2002. Kuvattavana oleminen on
                         antanut minulle perspektiiviä kuvaamiseen ja siihen miten
                         ohjata ihmistä kameran edessä. -->
-                </p>
-                <p class="textcolumn">
-                    Parasta työssäni on olla osa tiimiä ja tuottaa upea
-                    lopputulos yhteistyönä. Pidän kaikista työni vaiheista:
-                    autolla ajamisesta kuvauspaikoille, kuvauksista, ihmisistä,
-                    kuvausjärjestelyistä aina kuvien viimeistelyyn saakka. On
-                    hienoa, että saan tehdä töitä toinen toistaan mukavampien
-                    kuvausjärjestelijöiden, stailistien, toimittajien,
-                    graafikoiden, markkinointi- ja viestintäalan ihmisten sekä
-                    tietysti asiakkaiden kanssa.
-                </p>
+                    </p>
 
-                <div class="buttondiv">
-                    <a class="custombutton"
-                        href="https://tyopaikat.oikotie.fi/tyontekijalle/artikkelit/tyon-ytimessa-valokuvaaja-sini-pennanen"
-                        target="_blank">
-                        Lue lisää työstäni
-                    </a>
+                    <p class="textcolumn">
+                        Parasta työssäni on olla osa tiimiä ja tuottaa upea
+                        lopputulos yhteistyönä. Pidän kaikista työni vaiheista:
+                        autolla ajamisesta kuvauspaikoille, kuvauksista, ihmisistä,
+                        kuvausjärjestelyistä aina kuvien viimeistelyyn saakka. On
+                        hienoa, että saan tehdä töitä toinen toistaan mukavampien
+                        kuvausjärjestelijöiden, stailistien, toimittajien,
+                        graafikoiden, markkinointi- ja viestintäalan ihmisten sekä
+                        tietysti asiakkaiden kanssa.
+                    </p>
                 </div>
+
                 <!-- <div class="aboutimg aboutimg2">
                     <img src="/images/kuvaaja2.jpg" alt="" class="kuvaaja2" />
                 </div> -->
+            </div>
+            <div class="buttondiv">
+                <a class="custombutton"
+                    href="https://tyopaikat.oikotie.fi/tyontekijalle/artikkelit/tyon-ytimessa-valokuvaaja-sini-pennanen"
+                    target="_blank">
+                    Lue lisää työstäni
+                </a>
             </div>
         </section>
 
@@ -384,21 +399,23 @@
         </section>
 
         <section class="contact" id="contact">
-            <div class="headerandsocials">
-                <h2 class="contact-h2">Yhteystiedot</h2>
-                <div class="socials">
+            <div class="contactdiv1">
+                <div class="headerandsocials">
+                    <h2 class="contact-h2">Yhteystiedot</h2>
+                    <div class="socials">
 
-                    <a class="contactsvg social" href="https://www.instagram.com/sininenkuva/" target="_blank"><img
-                            class="lazy-image" data-src="/images/insta.svg" alt="Instagram logo" /></a>
+                        <a class="contactsvg social" href="https://www.instagram.com/sininenkuva/" target="_blank"><img
+                                class="lazy-image" data-src="/images/insta.svg" alt="Instagram logo" /></a>
 
-                    <a class="contactsvg social" href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/"
-                        target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg"
-                            alt="LinkedIn logo" /></a>
-                    <a class="contactsvg social" href="https://www.facebook.com/sininenkuva.fi/" target="_blank"><img
-                            class="lazy-image" data-src="/images/face2.svg" alt="Facebook logo" /></a>
+                        <a class="contactsvg social" href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/"
+                            target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg"
+                                alt="LinkedIn logo" /></a>
+                        <a class="contactsvg social" href="https://www.facebook.com/sininenkuva.fi/"
+                            target="_blank"><img class="lazy-image" data-src="/images/face2.svg"
+                                alt="Facebook logo" /></a>
+                    </div>
                 </div>
-            </div>
-            <div class="contactdiv">
+
                 <div class="infobox">
                     <p class="infoboxitem infobutton">Y: 1888410-7</p>
                     <a class="infoboxitem infobutton" href="mailto:posti@sininenkuva.fi">
@@ -407,6 +424,10 @@
                         0400 948 838
                     </a>
                 </div>
+            </div>
+            <div class="contactdiv2">
+
+
                 <h2>Viesti</h2>
 
                 <form action="">
@@ -467,8 +488,8 @@
                         <input type="submit" class="submitbutton" value="Lähetä" />
                     </div>
                 </form>
-
             </div>
+
         </section>
     </main>
 

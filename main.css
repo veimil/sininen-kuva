@@ -93,8 +93,14 @@ h2 {
     /* padding: 80px; */
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     overflow: hidden;
-    background-color: #080808;
-    padding-top: 3rem;
+    background-color: #101010;
+}
+
+.imgscroll-container {
+    height: var(--vh100);
+    display: flex;
+    align-items: center;
+    padding-bottom: 7rem;
 
 }
 
@@ -147,10 +153,16 @@ h2 {
     background-color: white;
 }
 
+.additionalpics-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .additionalpics {
     display: flex;
     height: 100vw;
-    margin-top: 6rem;
     overflow: hidden;
     gap: 0.5rem;
 
@@ -186,12 +198,15 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1rem;
+    width: 100%;
 }
 
 .custombutton {
     padding: 0.8rem 1.6rem;
     margin: auto;
-    background-color: #080808;
+    background-color: black;
+    border-radius: 10px;
     filter: drop-shadow(0px 0px 33px rgb(225, 225, 225));
 }
 
@@ -199,33 +214,39 @@ h2 {
     background-color: var(--button-color-hover);
     transform: translateY(-3px);
 } */
-
-.custombutton:active {
-    border-radius: 25px;
-}
-
 .about,
 .aboutinner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
-    /* background-color: rgb(195, 218, 243); */
-    background-color: rgb(175, 220, 238);
+}
+
+.about {
+    background-image: linear-gradient(rgb(217, 237, 255), #cbf0f8);
+}
+
+.aboutinner2{
+    display: flex;
+    align-items: center;
 }
 
 .textcolumn {
     background-color: var(--white);
     margin: 0 1rem;
     margin-top: 1.5rem;
-    /* margin-top: 1.5rem; */
     padding: 0.7rem 1.6rem;
+
     padding-bottom: 1rem;
     /* background-color: #6282b3; */
     filter: var(--filter1);
+    /* border-radius: 10px; */
+    /* border: 1px solid black; */
+    background-color: white;
+    color: black;
     border-radius: 10px;
 }
+
 
 .aboutimg {
     margin-top: 1.5rem;
@@ -234,8 +255,7 @@ h2 {
     display: flex;
     justify-content: center;
     filter: var(--filter1);
-    border-left: 1rem solid var(--white);
-    border-right: 1rem solid var(--white);
+
 }
 
 .aboutimg img {
@@ -246,7 +266,7 @@ h2 {
 
 
 .about .custombutton {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: white;
     color: black;
     border: none;
     filter: none;
@@ -268,6 +288,7 @@ h2 {
     padding: 0.5rem 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
     /* max-width: 100%; */
 }
@@ -310,10 +331,25 @@ h2 {
     /* justify-content: center; */
     /* padding: 1rem; */
     /* background-color: #6282b3; */
-    background-image:
+    /* background-image:
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
-        repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem);
-    
+        repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem); */
+    background-image: linear-gradient(black, #222222);
+
+}
+
+.contactdiv1 {
+    height: calc(var(--vh100) - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contactdiv2 {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 
@@ -322,7 +358,6 @@ h2 {
     display: flex;
     flex-direction: column;
     /* gap: 3rem; */
-    padding-top: 4rem;
     padding-bottom: 3rem;
 }
 
@@ -355,9 +390,8 @@ h2 {
     margin: 2rem;
     /* border-radius: 25px; */
     gap: 1rem;
-    border: 3px solid rgb(100, 185, 255);
+    border: 3px solid rgb(114, 189, 255);
     margin-top: 0;
-    margin-bottom: 4rem;
     border-radius: 25px;
 
 }
@@ -384,8 +418,8 @@ form {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background-color: rgb(220, 239, 255);
-    
+    background-color: rgb(217, 237, 255);
+
     padding: 2rem 3rem;
     margin-top: 1rem;
 }
@@ -491,12 +525,13 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: var(--footer-color); */
+    background-color: #111111;
     padding: 3rem 0;
 }
 
 footer p {
     color: gray;
+    text-align: center;
 }
 
 .footerlinks {
@@ -516,7 +551,7 @@ footer p {
 
 
 .footerlogo {
-    width: 75%;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -527,11 +562,18 @@ footer p {
 }
 
 .footerlogo img {
-    width: 65%;
-    height: auto;
+    height: 67%;
+    width: auto;
     opacity: 0.8;
 }
 
+@media (min-width: 460px) {
+    .infobox {
+        width: 80%;
+        height: 80vw;
+        margin: 0 auto;
+    }
+}
 
 @media (min-width: 540px) {
 
@@ -543,12 +585,10 @@ footer p {
     .additionalpics {
         width: 500px;
         height: 500px;
-        margin: 8rem auto;
-        margin-bottom: 0;
     }
 
     .aboutinner2 {
-        margin-top: 0.5rem;
+        padding-top: 0.5rem;
     }
 
     .textcolumn {
@@ -556,15 +596,17 @@ footer p {
         padding-bottom: 1.5rem;
         margin: 0 3rem;
         margin-top: 2rem;
-        filter: drop-shadow(0px, 0px 10px rgba(0, 0, 0, 0.5));
     }
 
     .aboutimg {
+        height: calc(var(--vh100) - 333px);
+        width: auto;
         margin: 3rem;
         margin-top: 3rem;
         margin-bottom: 1rem;
         filter: var(--filter1);
         background-color: var(--white);
+        border-radius: 10px;
     }
 
     .aboutinner1 {
@@ -591,16 +633,18 @@ footer p {
     }
 
     .infobox {
-        width: 67%;
-        height: 67vw;
-        margin: 0 auto;
-        margin-bottom: 5rem;
+        width: 50%;
+        height: 50vw;
+    }
+
+    .contactdiv2 {
+        margin-top: 7rem;
     }
 
     form {
-        margin-top: 2rem;
+
         padding: 2rem 3rem;
-        border-top: 2rem;
+
 
     }
 
@@ -616,29 +660,59 @@ footer p {
         color: rgb(255, 255, 255);
     }
 
-    .portfolio {
-        padding-top: 5rem;
-    }
-
-    .textcolumn {
-        padding: 2rem 2.5rem;
-        padding-bottom: 3rem;
-        margin-top: 4rem;
-        width: 80%;
+   
+    .imgscroll-container{
+        width: 50%;
     }
 
     .additionalpics {
-        margin: 12rem auto;
-        margin-bottom: 0;
+        width: 600px;
+        height: 600px;
+    }
+
+    .textcolumncontainer{
+
+        display: flex;
+        
+
+        gap: 2rem;
+    }
+    .textcolumn {
+        
+        margin-top: 4rem;
+        width: 100%;
     }
 
     .buttondiv {
         height: calc(var(--vh100) * 0.4);
+
     }
 
+    .aboutinner {
+        flex-direction: row;
+        padding: 3rem;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .aboutinner2{
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+        align-items: center;
+    }
+
+    .textcolumn{
+        margin: 0;
+    }
+    .about .buttondiv{
+        height: 200px;
+    }
     .aboutimg {
-        margin-top: 5rem;
-        width: 60%;
+        width: 50%;
+        height: auto;
+        margin: 0;
+        
     }
 
     .infobox {
@@ -652,14 +726,6 @@ footer p {
 @media (min-width: 1024px) {
     .kansikuva {
         height: 100%;
-    }
-
-    header {
-        height: 100px;
-    }
-
-    .dropdown {
-        top: 100px;
     }
 
     .vali {
@@ -677,8 +743,8 @@ footer p {
     }
 
     .additionalpics {
-        height: calc(var(--vh100) - 80px);
-        width: 100%;
+        width: 700px;
+        height: 700px;
         gap: 1rem;
     }
 
@@ -687,7 +753,38 @@ footer p {
         height: 100%;
     }
 
-    .aboutinner {
+    
+
+    .aboutimg{
+        margin: 0;
+        width: 40%;
+        height: auto;
+    }
+    
+
+    .infobox {
+        width: 40%;
+    }
+
+    .gallerypreview{
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    .gallerypreview img{
+        border-radius: 10px;
+    }
+    .scrollcontainer1,
+    .scrollcontainer2{
+        width: 75%;
+        gap: 1rem;
+    }
+
+    .aboutinner2{
         flex-direction: row;
+    }
+    .textcolumncontainer{
+        flex-direction: column;
+        width: 50%;
     }
 }
