@@ -86,6 +86,7 @@ h2 {
 
 .portfolio {
     /* padding-top: 1rem; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,6 +95,7 @@ h2 {
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     overflow: hidden;
     background-color: #101010;
+
 }
 
 .imgscroll-container {
@@ -101,6 +103,7 @@ h2 {
     display: flex;
     align-items: center;
     padding-bottom: 7rem;
+    width: 100vw;
 
 }
 
@@ -110,7 +113,7 @@ h2 {
     scroll-snap-type: x mandatory;
     scroll-behavior: auto;
     height: 500px;
-    width: 100vw;
+    width: 100%;
     align-items: center;
     scrollbar-width: none;
 }
@@ -124,7 +127,8 @@ h2 {
     scroll-snap-stop: always;
     flex: none;
     /* Prevents images from resizing */
-    width: 100vw;
+    /* width: 100vw; */
+    width: 100%;
     /* Each image takes up the full viewport width */
     height: 100%;
     /* max-height: 100%; */
@@ -226,7 +230,7 @@ h2 {
     background-image: linear-gradient(rgb(217, 237, 255), #cbf0f8);
 }
 
-.aboutinner2{
+.aboutinner2 {
     display: flex;
     align-items: center;
 }
@@ -660,25 +664,22 @@ footer p {
         color: rgb(255, 255, 255);
     }
 
-   
-    .imgscroll-container{
-        width: 50%;
-    }
 
     .additionalpics {
         width: 600px;
         height: 600px;
     }
 
-    .textcolumncontainer{
+    .textcolumncontainer {
 
         display: flex;
-        
+
 
         gap: 2rem;
     }
+
     .textcolumn {
-        
+
         margin-top: 4rem;
         width: 100%;
     }
@@ -695,24 +696,26 @@ footer p {
         align-items: start;
     }
 
-    .aboutinner2{
+    .aboutinner2 {
         flex-direction: column;
         padding-top: 0;
         padding-bottom: 0;
         align-items: center;
     }
 
-    .textcolumn{
+    .textcolumn {
         margin: 0;
     }
-    .about .buttondiv{
+
+    .about .buttondiv {
         height: 200px;
     }
+
     .aboutimg {
         width: 50%;
         height: auto;
         margin: 0;
-        
+
     }
 
     .infobox {
@@ -732,11 +735,31 @@ footer p {
         display: none;
     }
 
-    .portfolio {
-        width: 100%;
+    .imgscroll-container {
+        position: relative;
     }
 
+    .scroll-hide-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 25%;
+        background-image: linear-gradient(to right, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+    }
 
+    .scroll-hide-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 33%;
+        background-image: linear-gradient(to left, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+    }
+
+    .imgscroll {
+        height: 600px;
+    }
 
     .imgscroll img {
         width: 100%;
@@ -753,37 +776,39 @@ footer p {
         height: 100%;
     }
 
-    
 
-    .aboutimg{
+
+    .aboutimg {
         margin: 0;
         width: 40%;
         height: auto;
     }
-    
+
 
     .infobox {
         width: 40%;
     }
 
-    .gallerypreview{
+    .gallerypreview {
         gap: 1rem;
         padding-top: 1rem;
     }
 
-    .gallerypreview img{
+    .gallerypreview img {
         border-radius: 10px;
     }
+
     .scrollcontainer1,
-    .scrollcontainer2{
+    .scrollcontainer2 {
         width: 75%;
         gap: 1rem;
     }
 
-    .aboutinner2{
+    .aboutinner2 {
         flex-direction: row;
     }
-    .textcolumncontainer{
+
+    .textcolumncontainer {
         flex-direction: column;
         width: 50%;
     }
