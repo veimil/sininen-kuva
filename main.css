@@ -176,7 +176,7 @@ h2 {
 
 
 .buttondiv {
-    height: calc(var(--vh100) * 0.33);
+    height: calc(var(--vh) * 0.33);
     display: flex;
     background-size: cover;
     display: flex;
@@ -338,7 +338,7 @@ h2 {
 }
 
 .contactdiv1 {
-    height: calc(var(--vh100) - 80px);
+    height: calc(var(--vh) - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -674,7 +674,7 @@ footer p {
     }
 
     .buttondiv {
-        height: calc(var(--vh100) * 0.4);
+        height: calc(var(--vh) * 0.4);
 
     }
 
