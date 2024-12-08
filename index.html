@@ -4,19 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sininen Kuva</title>
+    <title>Sininen Kuva - Valokuvauspalvelu</title>
+
+    <meta name="keywords" content="Valokuvaaja, valokuvauspalvelu, Sini Pennanen">
+    <meta name="description"
+        content="Valokuvauspalvelut yrityksille sekä yksityishenkilöille - katso galleria sekä lue työstäni">
+    <link rel="icon" href="images/favicon.png">
+
 
     <link rel="preload" as="image" href="/images/sininenkuva.webp">
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
+    <link rel="preload" href="https://fonts.gstatic.com/s/ebgaramond/v20/font.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="images/favicon.png">
-
-    <script>
+    <script defer>
         const vh100 = window.innerHeight;
         document.documentElement.style.setProperty('--vh100', `${vh100}px`);
     </script>
@@ -25,6 +32,7 @@
     <style>
         :root {
             --white: #f8f8f8;
+            --black: #080808;
             --filter1: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
             --filter2: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
         }
@@ -36,51 +44,51 @@
         }
 
         body {
-            font-family: "EB Garamond", serif;
+            font-family: "EB Garamond";
             font-optical-sizing: auto;
-            font-weight: 400;
             font-style: normal;
             line-height: 1.6;
             letter-spacing: 0.5px;
             font-size: 1.3rem;
-            background-color: black;
+            background-color: #080808;
             overflow-x: hidden;
         }
 
 
         header {
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px;
+            height: 83px;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: black;
+            background-color: var(--black);
+            position: sticky;
         }
 
         .logocontainer {
-            height: 100%;
+            height: 83px;
             width: auto;
             display: flex;
             align-items: center;
-            align-items: center;
-            padding-left: 1rem;
+            padding-left: 2rem;
         }
 
         .logocontainer img {
             height: 37px;
             width: auto;
+            object-fit: contain;
             opacity: 0.9;
         }
 
         .nav-wrapper {
-            position: relative;
             height: 100%;
+            width: auto;
             display: flex;
             justify-content: end;
+            position: relative;
         }
 
         .menu-trigger {
@@ -88,9 +96,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black;
             border: none;
-            padding: 0 1rem;
+            background-color: var(--black);
+            padding-right: 2rem;
         }
 
         .menu-trigger:hover {
@@ -110,26 +118,25 @@
         a {
             text-decoration: none;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
+        p {
+            color: #505050;
+        }
 
         .dropdown {
             position: absolute;
-            top: 80px;
-            /* height: 100vh;
-    width: 0; */
+            top: 83px;
             width: 100vw;
             height: 0;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
-            /* transition: width 0.2s; */
-            transition: height 0.4s cubic-bezier(0, .85, .23, 1);
-            background-color: #080808;
+            overflow: hidden;
+            transition: height 0.2s cubic-bezier(0, .85, .23, 1);
+            background-color: #151515;
             z-index: 1000;
         }
-
 
         nav ul {
             display: flex;
@@ -143,12 +150,23 @@
             align-items: center;
             width: 100%;
             padding-left: 2rem;
-            color: #080808;
+            color: var(--white);
             position: relative;
-            opacity: 0;
-            /* transform: translateY(-1rem); */
-            transition: opacity 0.5s 0.1s;
+        }
 
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(100%);
+            z-index: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         main {
@@ -158,18 +176,16 @@
         }
 
         .cover {
-            height: var(--vh100);
-            background-color: #080808;
+            height: calc(var(--vh100) - 83px);
         }
 
         .coveritems {
             height: 100%;
-            padding-top: 80px;
             display: flex;
             flex-direction: column;
         }
 
-        .kansikuva {
+        .coverimg {
             width: 100%;
             height: 67%;
             overflow: hidden;
@@ -180,9 +196,9 @@
             /* height: 100vh; */
         }
 
-        .kansikuva img {
+        .coverimg img {
             height: 100%;
-            width: auto;
+            width: 100%;
 
             /*toisin päin isommalle */
             /* max-height: calc(100vh - 85px); */
@@ -199,10 +215,13 @@
             padding: 0 2rem;
             font-size: 1.5rem;
             text-align: center;
+            color: rgb(50, 50, 50);
         }
 
         @media (min-width: 1024px) {
-            .kansikuva {
+
+
+            .coverimg {
                 height: 100%;
             }
 
@@ -231,7 +250,7 @@
                 <img src="/images/menu-blue.svg" alt="menu icon" width="40" height="40" />
             </button>
             <div class="dropdown">
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul>
                         <li>
                             <a href="/">
@@ -259,7 +278,7 @@
     <main>
         <section class="cover">
             <div class="coveritems">
-                <div class="kansikuva">
+                <div class="coverimg">
                     <img src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177" height="3094" />
                 </div>
                 <p class="vali">
@@ -312,14 +331,14 @@
         <section class="about">
             <div class="aboutinner aboutinner1">
                 <p class="textcolumn textcolumn1">
-                    <span style="font-weight: bold; font-size: larger;">Etsitkö</span> yrityksellesi
+                    <span class="larger bolder">Etsitkö</span> yrityksellesi
                     ammattivalokuvaajaa, joka hallitsee tekniikan
                     lisäksi myös kuvaustilanteen tunnelman luomisen parhaan lopputuloksen
                     saamiseksi? Olet juuri oikeassa paikassa, lämpimästi tervetuloa
                     kuvien maailmaan!
                 </p>
                 <p class="textcolumn textcolumn2">
-                    Sininen Kuva on täyden palvelun laatustudio, jonka perustaja
+                    <span class="larger bolder">Sininen Kuva</span> on täyden palvelun laatustudio, jonka perustaja
                     olen minä, valokuvaaja Sini Pennanen. Sininen kuva tarjoaa
                     käyttöösi kaiken osaamiseni ja kokemukseni, joita olen
                     vuosien varrella saanut erilaisten ihmisten ja yritysten
@@ -351,7 +370,7 @@
                 </div>
                 <div class="textcolumncontainer">
                     <p class="textcolumn textcolumn3">
-                        <span style="font-weight: bold; font-size: larger;">Kuvaan</span>
+                        <span class="larger bolder"">Kuvaan</span>
                         useille Suomen johtaville yrityksille, sekä mainos- ja viestintätoimistoille
                         ja lehtitaloille mainontaa ja lehtikuvia. Töitäni voit nähdä
                         muun muassa aikakausi- ja asiakaslehdissä sekä mainoksissa Suomessa
@@ -362,15 +381,15 @@
                         ohjata ihmistä kameran edessä. -->
                     </p>
 
-                    <p class="textcolumn">
-                        Parasta työssäni on olla osa tiimiä ja tuottaa upea
-                        lopputulos yhteistyönä. Pidän kaikista työni vaiheista:
-                        autolla ajamisesta kuvauspaikoille, kuvauksista, ihmisistä,
-                        kuvausjärjestelyistä aina kuvien viimeistelyyn saakka. On
-                        hienoa, että saan tehdä töitä toinen toistaan mukavampien
-                        kuvausjärjestelijöiden, stailistien, toimittajien,
-                        graafikoiden, markkinointi- ja viestintäalan ihmisten sekä
-                        tietysti asiakkaiden kanssa.
+                    <p class=" textcolumn">
+                            <span class="larger bolder">Parasta työssäni</span> on olla osa tiimiä ja tuottaa upea
+                            lopputulos yhteistyönä. Pidän kaikista työni vaiheista:
+                            autolla ajamisesta kuvauspaikoille, kuvauksista, ihmisistä,
+                            kuvausjärjestelyistä aina kuvien viimeistelyyn saakka. On
+                            hienoa, että saan tehdä töitä toinen toistaan mukavampien
+                            kuvausjärjestelijöiden, stailistien, toimittajien,
+                            graafikoiden, markkinointi- ja viestintäalan ihmisten sekä
+                            tietysti asiakkaiden kanssa.
                     </p>
                 </div>
 
@@ -386,6 +405,7 @@
                 </a>
             </div>
         </section>
+
 
         <section class="gallerypreview">
             <div class="scrollcontainer1">
@@ -506,29 +526,7 @@
             <p>page by Veikko Milton</p>
         </div>
     </footer>
-
-    <script>
-
-    </script>
-
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            const images = document.querySelectorAll('.lazy-image');
-
-            images.forEach((img) => {
-                const src = img.getAttribute('data-src');
-                if (src) {
-                    img.src = src;
-                }
-            });
-        });
-
-    </script>
-
     <script src="koodi.js" defer></script>
-
 </body>
 
 </html>
