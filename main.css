@@ -185,15 +185,11 @@ h2 {
     width: 100%;
 }
 
-.portfolio .buttondiv {
-    background-color: black;
-
-}
 
 .custombutton {
     padding: 1rem 2rem;
-    margin: auto;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--white);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* .buttondiv:hover {
