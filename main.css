@@ -73,24 +73,23 @@ h2 {
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     overflow: hidden;
     background-image: linear-gradient(#181c27, black);
-    background-size: cover;
-    background-position: center;
 
 }
 
 .imgscroll-container {
     padding: 3rem 0;
-   
+    padding-bottom: 1rem;
+
     width: 100vw;
 
 }
 
 .imgscroll {
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    height: 500px;
+    height: 600px;
     width: 100%;
     align-items: center;
     scrollbar-width: none;
@@ -107,12 +106,13 @@ h2 {
     /* Prevents images from resizing */
     /* width: 100vw; */
     width: 100%;
+    height: auto;
     /* Each image takes up the full viewport width */
-    height: 100%;
     /* max-height: 100%; */
     /* Ensures the image doesn't exceed container height */
     object-fit: contain;
     margin: 0 100px;
+    border-radius: 10px;
 
 }
 
@@ -129,6 +129,7 @@ h2 {
     background-color: gray;
     border-radius: 50%;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .dot.active {
@@ -136,7 +137,7 @@ h2 {
 }
 
 .additionalpics-container {
-    border-top: 133px solid rgb(203, 231, 255);
+    margin-top: 133px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -144,7 +145,6 @@ h2 {
 }
 
 .additionalpics {
-    border-top: 88px solid #101010;
     display: flex;
     height: calc(100vw + 88px);
     overflow: hidden;
@@ -176,7 +176,7 @@ h2 {
 
 
 .buttondiv {
-    height: calc(var(--vh) * 0.33);
+    height: calc(var(--vh) * 0.25);
     display: flex;
     background-size: cover;
     display: flex;
@@ -186,12 +186,15 @@ h2 {
     width: 100%;
 }
 
+.portfolio .buttondiv {
+    background-color: black;
+
+}
+
 .custombutton {
     padding: 1rem 2rem;
     margin: auto;
-    background-color: black;
-    border-radius: 20px;
-    filter: drop-shadow(0px 0px 33px rgb(225, 225, 225));
+    border-bottom: 3px solid white;
 }
 
 /* .buttondiv:hover {
@@ -259,9 +262,9 @@ h2 {
 
 .about .custombutton {
     background-color: white;
-    color: rgb(50, 50, 50);
+    border-radius: 20px;
+    color: #111111;
     border: none;
-    filter: none;
 }
 
 /* .screenshotcontainer {
@@ -277,10 +280,11 @@ h2 {
 
 
 .gallerypreview {
-    padding: 1rem;
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* gap: 2.5rem; */
     gap: 1rem;
     /* max-width: 100%; */
 }
@@ -290,6 +294,7 @@ h2 {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
+    /* gap: 2.5rem; */
     gap: 1rem;
     overflow: hidden;
 }
@@ -305,6 +310,7 @@ h2 {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
+    /* gap: 2.5rem; */
     gap: 1rem;
     overflow: hidden;
 }
@@ -577,7 +583,7 @@ footer p {
         margin-bottom: 1rem;
         filter: var(--filter1);
         background-color: var(--white);
-        border-radius: 25px;
+        border: 0.5rem solid white;
     }
 
     .infobox {
@@ -760,8 +766,11 @@ footer p {
     .aboutimg {
         height: 600px;
         margin: 0;
+
+
     }
 
+    .aboutimg img {}
 
     .infobox {
         width: 40%;
@@ -774,7 +783,6 @@ footer p {
     .scrollcontainer1,
     .scrollcontainer2 {
         width: 75%;
-        gap: 1rem;
     }
 
     .aboutinner2 {
@@ -788,6 +796,12 @@ footer p {
 }
 
 @media (min-width: 1280px) {
+
+    .scrollcontainer1,
+    .scrollcontainer2 {
+        width: 65%;
+    }
+
     .aboutinner {}
 
     .aboutinner1 {
