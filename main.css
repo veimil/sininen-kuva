@@ -248,7 +248,7 @@ h2 {
     display: flex;
     justify-content: center;
     background-color: var(--white);
-
+    overflow: hidden;
 
 }
 
@@ -335,7 +335,7 @@ h2 {
     /* background-image:
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
         repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem); */
-    background-image: linear-gradient(black, #222222);
+    background-image: linear-gradient(black, #252525);
     background-size: cover;
     background-position: center;
 
@@ -409,7 +409,7 @@ h2 {
 }
 
 .infobutton {
-    background-color: #222222;
+    background-color: #222;
     padding: 0.8rem 1.6rem;
 
 }
@@ -578,6 +578,7 @@ footer p {
         margin: 3rem;
         margin-top: 3rem;
         margin-bottom: 1rem;
+        border-radius: 10px;
     }
 
     .infobox {
