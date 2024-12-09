@@ -175,7 +175,7 @@ h2 {
 
 
 .buttondiv {
-    height: calc(var(--vh) * 0.25);
+    height: calc(var(--vh) * 0.3);
     display: flex;
     background-size: cover;
     display: flex;
@@ -223,7 +223,7 @@ h2 {
     padding: 2rem;
     padding-top: 1rem;
     /* background-color: #6282b3; */
-    /* filter: var(--filter1); */
+    filter: var(--filter1);
     /* border-radius: 10px; */
     /* border: 1px solid black; */
     background-color: white;
@@ -232,7 +232,7 @@ h2 {
 
 .larger {
     font-size: larger;
-    color: rgb(80, 173, 255);
+    color: rgb(72, 169, 255);
 }
 
 .bolder {
