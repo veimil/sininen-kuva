@@ -58,7 +58,7 @@ h2 {
     font-size: 3.5rem;
     color: var(--white);
     text-align: center;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .portfolio {
@@ -596,6 +596,7 @@ footer p {
     h1,
     h2 {
         font-size: 4rem;
+        
     }
 
     .additionalpics {}
