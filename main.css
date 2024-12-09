@@ -73,12 +73,11 @@ h2 {
     /* background-image: linear-gradient(rgb(245, 249, 255), var(--white)); */
     overflow: hidden;
     background-image: linear-gradient(#181c27, black);
-
 }
 
 .imgscroll-container {
     padding: 3rem 0;
-    padding-bottom: 1rem;
+    padding-bottom: 0;
 
     width: 100vw;
 
