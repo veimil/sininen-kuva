@@ -26,10 +26,11 @@
     <!-- Critical CSS -->
     <style>
         :root {
-            --white: #f8f8f8;
+            --white: aliceblue;
+            --whitewhite: #f8f8f8;
             --black: #080808;
-            --filter1: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
-            --filter2: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+            --filter1: drop-shadow(0px 0px 7px rgba(50, 50, 50, 0.2));
+            --filter2: drop-shadow(0px 0px 10px rgba(50, 50, 50, 0.2));
         }
 
         * {
@@ -47,7 +48,7 @@
             line-height: 1.6;
             letter-spacing: 0.6px;
             font-size: 1.1rem;
-            background-color: #080808;
+            background-color: #181c27;
             overflow-x: hidden;
             color: #252525;
         }
@@ -172,6 +173,7 @@
 
         .cover {
             height: calc(var(--vh) - 83px);
+
         }
 
         .coveritems {
@@ -200,29 +202,57 @@
             object-fit: cover;
         }
 
-        .vali {
+        .quote-small {
             display: flex;
             align-items: center;
             justify-content: center;
             /* background-image: linear-gradient(to bottom left, rgb(200, 225, 255), rgb(169, 207, 255)); */
-            background-color: var(--white);
+            background-color: var(--whitewhite);
             flex-grow: 1;
             padding: 0 2rem;
             font-size: 1.3rem;
             text-align: center;
             color: rgb(50, 50, 50);
         }
-
+        @media (min-width: 768px) {
+            .quote-small{
+                font-size: 1.5rem;
+            }
+        }
         @media (min-width: 1024px) {
 
 
             .coverimg {
                 height: 100%;
-            }
 
-            .vali {
+            }
+            
+
+
+            .quote-small {
                 display: none;
             }
+            
+        }
+
+        @media (min-width: 1280px) {
+            body{
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 1536px) {}
+
+        @media (min-width: 2000px) {
+           body{
+            font-size: 1.4rem;
+           }
+
+            .coverimg img {
+                height: 100%;
+                width: auto;
+            }
+
         }
     </style>
 
@@ -277,13 +307,17 @@
                 <div class="coverimg">
                     <img src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177" height="3094" />
                 </div>
-                <p class="vali">
+                <p class="quote-small">
                     "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
                     näkee"
                 </p>
+                
             </div>
         </section>
-
+        <p class="quote-big">
+            "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
+            näkee"
+        </p>
         <section class="portfolio">
             <div class="imgscroll-container">
                 <div class="imgscroll">
@@ -396,7 +430,7 @@
         </section>
 
         <section class="contact" id="contact">
-            
+
             <div class="contactdiv1">
                 <div class="headerandsocials">
                     <h2 class="contact-h2">Yhteystiedot</h2>
