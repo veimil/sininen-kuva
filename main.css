@@ -342,7 +342,7 @@ h2 {
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
         repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem); */
     /* background-image: linear-gradient(black, #181c27); */
-    padding-top: 5rem;
+    
 
 }
 
@@ -352,6 +352,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     background-image: linear-gradient(black, #181c27);
+    padding-top: 5rem;
     padding-bottom: 5rem;
 }
 
