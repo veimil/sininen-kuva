@@ -48,7 +48,7 @@
             line-height: 1.6;
             letter-spacing: 0.6px;
             font-size: 1.1rem;
-            background-color: #181c27;
+            background-color: black;
             overflow-x: hidden;
             color: #252525;
         }
@@ -131,6 +131,11 @@
             transition: height 0.2s cubic-bezier(0, .85, .23, 1);
             background-color: #151515;
             z-index: 1000;
+            
+        }
+
+        .open {
+            height: 20rem;
         }
 
         nav ul {
@@ -214,11 +219,13 @@
             text-align: center;
             color: rgb(50, 50, 50);
         }
+
         @media (min-width: 768px) {
-            .quote-small{
+            .quote-small {
                 font-size: 1.5rem;
             }
         }
+
         @media (min-width: 1024px) {
 
 
@@ -226,27 +233,45 @@
                 height: 100%;
 
             }
-            
+
 
 
             .quote-small {
                 display: none;
             }
-            
+
         }
 
         @media (min-width: 1280px) {
-            body{
+            body {
                 font-size: 1.3rem;
             }
+
+            .dropdown {
+                top: 83px;
+                right: 0;
+                height: var(--vh);
+                width: 0;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: width 0.2s cubic-bezier(0, .85, .23, 1);
+                background-color: #151515;
+                z-index: 1000;
+            }
+
+            .open {
+                width: 25vw;
+            }
+
         }
 
         @media (min-width: 1536px) {}
 
         @media (min-width: 2000px) {
-           body{
-            font-size: 1.4rem;
-           }
+            body {
+                font-size: 1.4rem;
+            }
 
             .coverimg img {
                 height: 100%;
@@ -311,7 +336,7 @@
                     "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
                     näkee"
                 </p>
-                
+
             </div>
         </section>
         <p class="quote-big">
