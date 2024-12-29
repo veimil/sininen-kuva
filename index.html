@@ -3,12 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sininen Kuva - Valokuvauspalvelu</title>
 
     <meta name="description"
         content="Valokuvauspalvelut yrityksille sekä yksityishenkilöille - katso Galleria sekä lue työstäni">
-    <meta name="keywords" content="Valokuvaaja, valokuvauspalvelu, Sini Pennanen">
 
 
 
@@ -16,7 +15,7 @@
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>https://sininenkuva.netlify.app/images/sininenkuva.webp
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet"> -->
 
     <script defer>
@@ -51,20 +50,30 @@
             background-color: black;
             overflow-x: hidden;
             color: #252525;
+
         }
 
-
         header {
+            position: sticky;
+            position: -webkit-sticky;
+            /* Safari */
             top: 0;
             left: 0;
             width: 100%;
             height: 83px;
             z-index: 1000;
+            
+            align-items: center;
+            background-color: var(--black);
+        }
+
+        .headercontent{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: var(--black);
-            position: sticky;
+            height: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
         }
 
         .logocontainer {
@@ -83,11 +92,11 @@
         }
 
         .nav-wrapper {
+            position: relative;
             height: 100%;
             width: auto;
             display: flex;
             justify-content: end;
-            position: relative;
         }
 
         .menu-trigger {
@@ -109,7 +118,7 @@
             opacity: 0.9;
         }
 
-        ul {
+        nav ul {
             list-style-type: none;
         }
 
@@ -122,37 +131,53 @@
 
         .dropdown {
             position: absolute;
-            top: 80px;
             width: 100vw;
             height: 0;
+            top: 83px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
             transition: height 0.2s cubic-bezier(0, .85, .23, 1);
             background-color: #151515;
             z-index: 1000;
-            
+            opacity: 0;
+
         }
 
         .open {
             height: 20rem;
+            opacity: 1;
         }
 
         nav ul {
             display: flex;
             flex-direction: column;
             width: 100%;
-            padding-top: 0.5rem;
+            padding-top: 1rem;
         }
 
         nav ul a {
-            height: 4rem;
             display: flex;
             align-items: center;
-            width: 100%;
+            position: relative;
+            height: 4rem;
             padding-left: 2rem;
             color: var(--white);
+
+        }
+
+        nav ul button {
+            display: flex;
+            align-items: center;
             position: relative;
+            height: 4rem;
+            padding-left: 2rem;
+            color: var(--white);
+            background-color: transparent;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 100%;
         }
 
 
@@ -161,9 +186,9 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: var(--vh);
+            height: 100vh;
             backdrop-filter: blur(50px);
-            -webkit-backdrop-filter: blur(100%);
+            -webkit-backdrop-filter: blur(50px);
             z-index: 500;
             opacity: 0;
             visibility: hidden;
@@ -178,6 +203,7 @@
 
         .cover {
             height: calc(var(--vh) - 83px);
+            background-color: var(--whitewhite);
 
         }
 
@@ -248,20 +274,16 @@
             }
 
             .dropdown {
-                top: 83px;
-                right: 0;
-                height: var(--vh);
                 width: 0;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
+                height: 100vh;
+                right: 0;
                 transition: width 0.2s cubic-bezier(0, .85, .23, 1);
-                background-color: #151515;
-                z-index: 1000;
             }
 
             .open {
+                height: 100vh;
                 width: 25vw;
+                opacity: 1;
             }
 
         }
@@ -292,53 +314,62 @@
 
 
 <body>
-    <header>
-        <div class="logocontainer">
-            <img src="/images/logo-light.webp" alt="Sininen Kuva logo" id="logoimage" width="700" height="159" />
-        </div>
-        <div class="nav-wrapper">
-            <button class="menu-trigger" onclick="toggleDropdown()">
-                <img src="/images/menu-blue.svg" alt="menu icon" width="40" height="40" />
-            </button>
-            <div class="dropdown">
-                <nav aria-label="Main navigation">
-                    <ul>
-                        <li>
-                            <a href="/">
-                                Koti
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/gallery">
-                                Galleria
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/#contact">
-                                Yhteystiedot
-                            </a>
-                        </li>
-                    </ul>
 
-                </nav>
+    <div class="overlay" onclick="toggleDropdown()"></div>
+    <header>
+        <div class="headercontent">
+            <div class="logocontainer">
+                <img src="/images/logo-light.webp" alt="Sininen Kuva logo" id="logoimage" width="700" height="159" />
+            </div>
+            <div class="nav-wrapper">
+                <button class="menu-trigger" onclick="toggleDropdown()">
+                    <img src="/images/menu-blue.svg" alt="menu icon" width="40" height="40" />
+                </button>
+                <div class="dropdown">
+                    <nav aria-label="Main navigation">
+                        <ul>
+                            <li>
+                                <a href="/">
+                                    Koti
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/gallery">
+                                    Galleria
+                                </a>
+                            </li>
+                            <li>
+                                <button type="button" id="openVideo">
+                                    Katso video
+                                </button>
+                            </li>
+                            <li>
+                                <a href="/#contact">
+                                    Yhteystiedot
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
-    <div class="overlay" onclick="toggleDropdown()"></div>
+
+    <section class="cover">
+        <div class="coveritems">
+            <div class="coverimg">
+                <img src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177" height="3094" />
+            </div>
+            <p class="quote-small">
+                "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
+                näkee"
+            </p>
+
+        </div>
+    </section>
 
     <main>
-        <section class="cover">
-            <div class="coveritems">
-                <div class="coverimg">
-                    <img src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177" height="3094" />
-                </div>
-                <p class="quote-small">
-                    "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
-                    näkee"
-                </p>
-
-            </div>
-        </section>
         <p class="quote-big">
             "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
             näkee"
@@ -361,7 +392,26 @@
                 <div class="scroll-hide-right"></div>
             </div>
             <div class="dot-container"></div> <!-- Dots will go here -->
-
+            <div class="infosection">
+                <div class="infocard">
+                    <h2>Kuvauspalvelut</h2>
+                    <ul>
+                        <li>1. palvelu</li>
+                        <li>2. palvelu</li>
+                        <li>3. palvelu</li>
+                        <li>4. palvelu</li>
+                    </ul>
+                </div>
+                <div class="infocard">
+                    <h2>Paikkakunnat</h2>
+                    <ul>
+                        <li>1. paikkakunta</li>
+                        <li>2. paikkakunta</li>
+                        <li>3. paikkakunta</li>
+                        <li>4. paikkakunta</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="additionalpics-container">
                 <div class="additionalpics">
@@ -376,7 +426,7 @@
                 </div>
             </div>
             <div class="buttondiv">
-                <a class="custombutton" href="/galleria">Galleria</a>
+                <a class="custombutton" href="/galleria">Galleria <span class="arrow">&rightarrow;</span></a>
             </div>
         </section>
 
@@ -426,7 +476,6 @@
                         tietysti asiakkaiden kanssa.
                     </p>
                 </div>
-
                 <!-- <div class="aboutimg aboutimg2">
                     <img src="/images/kuvaaja2.jpg" alt="" class="kuvaaja2" />
                 </div> -->
@@ -435,7 +484,7 @@
                 <a class="custombutton"
                     href="https://tyopaikat.oikotie.fi/tyontekijalle/artikkelit/tyon-ytimessa-valokuvaaja-sini-pennanen"
                     target="_blank">
-                    Lue lisää työstäni
+                    Lue lisää työstäni <span class="arrow">&rightarrow;</span>
                 </a>
             </div>
         </section>
@@ -443,14 +492,22 @@
 
         <section class="gallerypreview">
             <div class="scrollcontainer1">
-                <img class="lazy-image" data-src="/images/galleryimg1.webp" alt="Gallery image about song contest" />
-                <img class="lazy-image" data-src="/images/galleryimg4.webp" alt="Gallery image about buildings" />
+                <div class="gallerypreviewitem">
+                    <img class="lazy-image" data-src="/images/galleryimg1.webp"
+                        alt="Gallery image about song contest" />
+                </div>
+                <div class="gallerypreviewitem"><img class="lazy-image" data-src="/images/galleryimg4.webp"
+                        alt="Gallery image about buildings" /></div>
             </div>
             <div class="scrollcontainer2">
-                <img class="lazy-image" data-src="/images/galleryimg2.webp"
-                    alt="Gallery image from Kruunuvuorenranta" />
-                <img class="lazy-image" data-src="/images/galleryimg3.webp"
-                    alt="Gallery image from Kruunuvuorenranta" />
+                <div class="gallerypreviewitem">
+                    <img class="lazy-image" data-src="/images/galleryimg2.webp"
+                        alt="Gallery image from Kruunuvuorenranta" />
+                </div>
+                <div class="gallerypreviewitem">
+                    <img class="lazy-image" data-src="/images/galleryimg3.webp"
+                        alt="Gallery image from Kruunuvuorenranta" />
+                </div>
             </div>
         </section>
 
@@ -538,7 +595,7 @@
                         </div>
                         <div class="formcolumn messagecolumn">
                             <label for="message"><big>Viesti</big></label>
-                            <input type="text" id="message" name="message" />
+                            <textarea id="message" name="message"></textarea>
                         </div>
                         <input type="submit" class="submitbutton" value="Lähetä" />
                     </div>
@@ -546,6 +603,15 @@
             </div>
 
         </section>
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+
+                <iframe id="youtubeVideo" width="400" height="200" src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
     </main>
 
     <footer>

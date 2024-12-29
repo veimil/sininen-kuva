@@ -83,3 +83,27 @@ document.querySelector('.dropdown nav').addEventListener('click', (event) => {
 window.addEventListener("load", () => {
 
 });
+
+
+const modal = document.getElementById('videoModal');
+const openBtn = document.getElementById('openVideo');
+const closeBtn = document.getElementById('closeModal');
+const videoFrame = document.getElementById('youtubeVideo');
+
+// Replace this with your YouTube video URL
+const videoURL = "https://www.youtube.com/embed/u2Qc9QYISyQ?si=JOdhXYeBa9wJvMtx";
+https://www.youtube.com/watch?v=u2Qc9QYISyQ
+// Open Modal
+openBtn.addEventListener('click', () => {
+  videoFrame.src = videoURL; // Set video source
+  modal.style.display = 'block'; // Show modal
+});
+
+
+// Close Modal if clicked outside the content
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    videoFrame.src = ''; // Stop video playback
+  }
+});
