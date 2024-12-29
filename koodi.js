@@ -91,19 +91,36 @@ const closeBtn = document.getElementById('closeModal');
 const videoFrame = document.getElementById('youtubeVideo');
 
 // Replace this with your YouTube video URL
-const videoURL = "https://www.youtube.com/embed/u2Qc9QYISyQ?si=JOdhXYeBa9wJvMtx";
-https://www.youtube.com/watch?v=u2Qc9QYISyQ
+const videoURL = "https://www.youtube.com/embed/u2Qc9QYISyQ?controls=0";
 // Open Modal
 openBtn.addEventListener('click', () => {
-  videoFrame.src = videoURL; // Set video source
-  modal.style.display = 'block'; // Show modal
+    videoFrame.src = videoURL; // Set video source
+    modal.style.display = 'block'; // Show modal
 });
 
 
 // Close Modal if clicked outside the content
 window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    videoFrame.src = ''; // Stop video playback
-  }
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        videoFrame.src = ''; // Stop video playback
+    }
 });
+
+
+function updateImageSrc() {
+    const isLargeScreen = window.innerWidth >= 1280; // Check screen size
+
+    document.querySelectorAll('.socials img').forEach(img => {
+        const defaultSrc = img.getAttribute('src'); // Default src
+        const largeSrc = img.getAttribute('data-large-src'); // Large src
+
+        // Switch src based on screen size
+        img.src = isLargeScreen ? largeSrc : defaultSrc;
+    });
+}
+
+// Run on load and resize
+updateImageSrc();
+window.addEventListener('resize', updateImageSrc);
+window.addEventListener('load', updateImageSrc);

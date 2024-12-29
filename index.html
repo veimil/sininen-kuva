@@ -211,6 +211,8 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            max-width: 1920px;
+            margin: 0 auto;
         }
 
         .coverimg {
@@ -375,18 +377,19 @@
             näkee"
         </p>
         <section class="portfolio">
-
-            <div class="imgscroll">
-                <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage1.webp"
-                    alt="Press image example" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage2.webp"
-                    alt="Press image example" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage4.webp"
-                    alt="Press image example" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage5.webp"
-                    alt="Press image example" />
-                <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage3.webp"
-                    alt="Press image example" />
+            <div class="imgscroll-container">
+                <div class="imgscroll">
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage1.webp"
+                        alt="Press image example" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage2.webp"
+                        alt="Press image example" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage4.webp"
+                        alt="Press image example" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage5.webp"
+                        alt="Press image example" />
+                    <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage3.webp"
+                        alt="Press image example" />
+                </div>
             </div>
             <div class="scroll-hide-left"></div>
             <div class="scroll-hide-right"></div>
@@ -491,22 +494,24 @@
 
 
         <section class="gallerypreview">
-            <div class="scrollcontainer1">
-                <div class="gallerypreviewitem">
+            <div class="gallerypreviewitems">
+                <div class="scrollcontainer1">
+
                     <img class="lazy-image" data-src="/images/galleryimg1.webp"
                         alt="Gallery image about song contest" />
+
+                    <img class="lazy-image" data-src="/images/galleryimg4.webp" alt="Gallery image about buildings" />
                 </div>
-                <div class="gallerypreviewitem"><img class="lazy-image" data-src="/images/galleryimg4.webp"
-                        alt="Gallery image about buildings" /></div>
-            </div>
-            <div class="scrollcontainer2">
-                <div class="gallerypreviewitem">
+
+                <div class="scrollcontainer2">
+
                     <img class="lazy-image" data-src="/images/galleryimg2.webp"
                         alt="Gallery image from Kruunuvuorenranta" />
-                </div>
-                <div class="gallerypreviewitem">
+
+
                     <img class="lazy-image" data-src="/images/galleryimg3.webp"
                         alt="Gallery image from Kruunuvuorenranta" />
+
                 </div>
             </div>
         </section>
@@ -520,14 +525,14 @@
 
                             <a class="contactsvg social" href="https://www.instagram.com/sininenkuva/"
                                 target="_blank"><img class="lazy-image" data-src="/images/insta.svg"
-                                    alt="Instagram logo" /></a>
+                                    data-large-src="/images/instablack.svg" alt="Instagram logo" /></a>
 
                             <a class="contactsvg social" href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/"
                                 target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg"
-                                    alt="LinkedIn logo" /></a>
+                                    data-large-src="/images/linkkariblack.svg" alt="LinkedIn logo" /></a>
                             <a class="contactsvg social" href="https://www.facebook.com/sininenkuva.fi/"
-                                target="_blank"><img class="lazy-image" data-src="/images/face2.svg"
-                                    alt="Facebook logo" /></a>
+                                target="_blank"><img class="lazy-image" data-src="/images/face.svg"
+                                    data-large-src="/images/faceblack.svg" alt="Facebook logo" /></a>
                         </div>
                     </div>
 
@@ -543,7 +548,7 @@
                 <div class="contactdiv2">
 
                     <form action="">
-                        <h2>Viesti</h2>
+                        <h2>Yhteydenottolomake</h2>
                         <div class="formcontent">
                             <div class="formcolumn inputcolumn">
                                 <input type="text" id="etunimi" name="etunimi" placeholder="Etunimi" required />
@@ -596,8 +601,8 @@
                                 </div>
                             </div>
                             <div class="formcolumn messagecolumn">
-                                <label for="message"><big>Viesti</big></label>
-                                <textarea id="message" name="message"></textarea>
+
+                                <textarea id="message" name="message" placeholder="Viesti"></textarea>
                             </div>
                             <input type="submit" class="submitbutton" value="Lähetä" />
                         </div>
