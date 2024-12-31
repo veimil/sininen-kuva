@@ -12,49 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const imgScroll = document.querySelector(".imgscroll");
-    const images = imgScroll.querySelectorAll("img");
-    const dotContainer = document.querySelector(".dot-container");
-
-    // Create a dot for each image
-    images.forEach((_, index) => {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        if (index === 0) dot.classList.add("active"); // Make the first dot active initially
-        dot.dataset.index = index; // Attach the index to the dot for navigation
-        dotContainer.appendChild(dot);
-    });
-
-    const dots = dotContainer.querySelectorAll(".dot");
-
-    // Add event listeners for dots (optional: for navigation)
-    dots.forEach((dot) => {
-        dot.addEventListener("click", (e) => {
-            const index = parseInt(dot.dataset.index, 10);
-            imgScroll.scrollTo({
-                left: index * imgScroll.scrollWidth / images.length,
-                behavior: "smooth",
-            });
-            updateActiveDot(index);
-        });
-    });
-
-    // Scroll event listener to update active dot
-    imgScroll.addEventListener("scroll", () => {
-        const scrollLeft = imgScroll.scrollLeft;
-        const index = Math.round(scrollLeft / (imgScroll.scrollWidth / images.length));
-        updateActiveDot(index);
-    });
-
-    // Function to update the active dot
-    function updateActiveDot(activeIndex) {
-        dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === activeIndex);
-        });
-    }
-});
-
 
 let dropdownVisible = false;
 
@@ -124,3 +81,105 @@ function updateImageSrc() {
 updateImageSrc();
 window.addEventListener('resize', updateImageSrc);
 window.addEventListener('load', updateImageSrc);
+
+// const scrollContainer = document.querySelector('.imgscroll');
+// const images = document.querySelectorAll('.imgscroll img');
+
+// // Duplicate images for infinite scrolling
+// images.forEach(img => {
+//     const clone = img.cloneNode(true); // Clone each image
+//     scrollContainer.appendChild(clone); // Append the clone
+// });
+
+// // Variables for smooth scrolling
+// let scrollAmount = 0;
+// const scrollSpeed = 4; // Pixels per frame (adjustable)
+
+// // Function to continuously scroll
+// function autoScroll() {
+//     scrollAmount += scrollSpeed; // Increment scroll position
+//     scrollContainer.scrollLeft = scrollAmount; // Update scroll position
+
+//     // Seamless loop: Reset when halfway through duplicated images
+//     if (scrollAmount >= scrollContainer.scrollWidth / 2) {
+//         scrollAmount = 0; // Reset scroll position invisibly
+//         scrollContainer.scrollLeft = 0;
+//     }
+
+//     requestAnimationFrame(autoScroll); // Continue scrolling
+// }
+
+// // Start scrolling
+// autoScroll();
+
+// // **Block only horizontal manual scrolling (Improved)**
+// scrollContainer.addEventListener('wheel', (e) => {
+//     if (e.deltaX !== 0) { // Detect horizontal scroll attempts
+//         e.preventDefault(); // Block horizontal scroll
+//     }
+// }, { passive: false }); // Passive false allows e.preventDefault()
+
+// scrollContainer.addEventListener('touchmove', (e) => {
+//     if (e.touches.length > 1 || e.changedTouches[0].clientX !== e.changedTouches[0].clientX) {
+//         e.preventDefault(); // Block horizontal swipe gestures
+//     }
+// }, { passive: false });
+
+const scrollContainer = document.querySelector('.imgscroll');
+const images = document.querySelectorAll('.imgscroll img');
+
+// Parameters
+const numClones = 10; // Number of times to duplicate the images
+const scrollSpeed = 3; // Pixels per frame (adjustable speed)
+
+// 1. Duplicate images to simulate infinite scrolling
+for (let i = 0; i < numClones; i++) {
+    images.forEach(img => {
+        const clone = img.cloneNode(true); // Clone each image
+        scrollContainer.appendChild(clone); // Append the clone
+    });
+}
+
+// 2. Continuous scrolling variables
+let scrollPos = 0; // Track current scroll position
+
+function autoScroll() {
+    // Increment the scroll position
+    scrollPos += scrollSpeed;
+
+    // 4. Apply the scroll position
+    scrollContainer.scrollLeft = scrollPos;
+
+    // Continue scrolling
+    requestAnimationFrame(autoScroll);
+}
+
+// 5. Start the infinite scroll
+autoScroll();
+
+// Block only horizontal scroll (wheel event)
+scrollContainer.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { // Only block if horizontal scroll
+        e.preventDefault(); // Block horizontal scroll
+    }
+}, { passive: false }); // Allow preventDefault()
+
+// Block only horizontal swipe (touchmove event)
+scrollContainer.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0]; // Get the first touch point
+
+    // Detect horizontal swipe
+    const touchStartX = touch.clientX;
+    const touchStartY = touch.clientY;
+
+    e.target.addEventListener('touchmove', (moveEvent) => {
+        const moveTouch = moveEvent.touches[0];
+        const dx = Math.abs(moveTouch.clientX - touchStartX); // Horizontal movement
+        const dy = Math.abs(moveTouch.clientY - touchStartY); // Vertical movement
+
+        if (dx > dy) { // Block horizontal movement only
+            moveEvent.preventDefault();
+        }
+    }, { passive: false });
+});
+
