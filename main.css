@@ -34,7 +34,7 @@ h2 {
 }
 
 .portfolio {
-    border-top: 133px solid #cbf0f8;
+    padding-top: 3rem;
     /* padding-top: 1rem; */
     width: 100%;
     display: flex;
@@ -53,10 +53,11 @@ h2 {
     padding-top: 3rem;
     padding-bottom: 1rem;
     overflow: hidden;
+    position: relative;
+
 }
 
 .imgscroll {
-    height: 600px;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
@@ -67,12 +68,35 @@ h2 {
     align-items: center;
     scrollbar-width: none;
 
+
 }
 
 
 .imgscroll::-webkit-scrollbar {
     display: none;
 }
+
+.scroll-hide-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background-image: linear-gradient(to right, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+    display: none;
+
+}
+
+.scroll-hide-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 33%;
+    background-image: linear-gradient(to left, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+    display: none;
+}
+
 
 .imgscroll img {
     scroll-snap-align: center;
@@ -81,19 +105,19 @@ h2 {
     /* Prevents images from resizing */
     /* width: 100vw; */
     width: 100%;
-    max-width: 420px;
+    max-width: 350px;
     height: auto;
     /* Each image takes up the full viewport width */
     /* max-height: 100%; */
     /* Ensures the image doesn't exceed container height */
     object-fit: contain;
-    margin: 0 100px;
+    margin: 0 111px;
     border-radius: 10px;
 
 }
 
 
-.dot-container {
+/* .dot-container {
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -111,31 +135,64 @@ h2 {
 
 .dot.active {
     background-color: white;
-}
+} */
 
 .infosection {
-    width: 80%;
     max-width: 1920px;
-    margin: 0 auto;
+    margin: 12rem 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    gap: 1rem;
-    padding: 0.5rem;
-    color: white;
-    border: 1px solid white;
-    margin: 3rem;
-    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: whitesmoke;
+    position: relative;
+
+
 }
 
+.infosection h2 {
+    font-size: 2.2rem;
+    text-align: start;
+}
 
+.infosectionimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.infocard {
+
+    /* width: 400px; */
+
+    /* min-height: 350px; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.infocard ul {
+    padding-left: 2rem;
+}
+
+.infocard:first-child {
+    padding-bottom: 0;
+}
 
 .additionalpics-container {
-    margin-top: 133px;
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+}
+
+.additionalpics:nth-child(1) {
+    display: none;
 }
 
 .additionalpics {
@@ -143,15 +200,16 @@ h2 {
     height: 100vw;
     overflow: hidden;
     gap: 0.5rem;
-    margin: 0 auto;
-    max-width: 1920px;
-
+    max-width: 700px;
+    max-height: 700px;
 }
+
 
 .additionalpics img {
     width: 50%;
+    height: auto;
     object-fit: cover;
-
+    object-position: center;
 }
 
 .imgcolumn {
@@ -166,19 +224,16 @@ h2 {
 .imgcolumn img {
     width: 100%;
     height: 50%;
-    object-fit: cover;
 }
 
 
 .buttondiv {
-    height: calc(var(--vh) * 0.25);
-    display: flex;
-    background-size: cover;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-bottom: 1rem;
-    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+
 }
 
 
@@ -219,23 +274,20 @@ h2 {
     /* Move arrow into place */
 }
 
-/* .buttondiv:hover {
-    background-color: var(--button-color-hover);
-    transform: translateY(-3px);
-} */
 .about,
-.aboutinner1,
-.aboutinner2 {
+.aboutinner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     background-color: white;
+    font-family: ubuntuR;
+    color: var(--black);
 }
 
-.aboutinner1,
-.aboutinner2{
+
+.aboutinner {
     max-width: 1920px;
 }
 
@@ -243,6 +295,8 @@ h2 {
 .about {
     background-image: linear-gradient(#d7ebfc, rgb(212, 244, 249));
 } */
+
+
 
 .textcolumncontainer {
     display: flex;
@@ -253,24 +307,26 @@ h2 {
     margin: 0 1rem;
     margin-top: 1.5rem;
     padding: 2rem;
-    padding-top: 1.3rem;
-    padding-right: 1rem;
+    padding-top: 1.5rem;
     /* background-color: #6282b3; */
     border-radius: 25px;
-    /* border: 1px solid black; */
+    font-family: "EB Garamond", serif;
+    font-size: 1.4rem;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 
+}
+.textcolumns{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 
-.aboutinner1 .textcolumn:nth-child(2) {
-
-    background-color: rgb(244, 250, 255);
-    border-radius: 25px;
-    color: black;
-}
-
-.aboutinner2 .textcolumn:first-child {
-    background-color: rgb(244, 250, 255);
+.bluecard {
+    background-color: rgb(240, 248, 255);
+    
     border-radius: 25px;
     color: black;
 }
@@ -278,7 +334,7 @@ h2 {
 
 .larger {
     font-size: 1.3em;
-    color: rgb(149, 206, 255);
+    color: rgb(101, 183, 255);
 }
 
 .bolder {
@@ -290,6 +346,8 @@ h2 {
     /* filter: var(--filter1); */
     background-color: white;
     overflow: hidden;
+    width: 100%;
+
 
 }
 
@@ -297,6 +355,7 @@ h2 {
     width: 100%;
     height: auto;
     object-fit: cover;
+    object-position: center;
 }
 
 
@@ -352,6 +411,7 @@ h2 {
 .gallerypreview img {
     width: 100%;
     object-fit: cover;
+    object-position: center;
     border-radius: 10px;
     overflow: hidden;
 
@@ -369,7 +429,7 @@ h2 {
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
         repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem); */
     /* background-image: linear-gradient(black, #181c27); */
-    background-color: #151515;
+    background: rgb(193, 238, 238);
     color: white;
 
 
@@ -607,7 +667,7 @@ input[type="submit"] {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #111;
+    background-color: rgba(17, 17, 17, 0.5);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
     /* Semi-transparent background */
@@ -680,18 +740,22 @@ footer p {
 
 @media (min-width: 460px) {
 
+    .infocard {
+        width: 400px;
+    }
+
     .aboutimg {
         height: 450px;
-        width: auto;
         margin: 3rem;
         margin-top: 3rem;
         margin-bottom: 1rem;
-        border-radius: 25px;
+
     }
 
     .aboutimg img {
         height: 100%;
         width: 100%;
+        border-radius: 25px;
     }
 
     .infobox {
@@ -718,12 +782,11 @@ footer p {
     }
 
 
-    .aboutinner1,
-    .aboutinner2 {
+    .aboutinner {
         padding-top: 0.5rem;
     }
 
-    .aboutinner2 {
+    .aboutinner:last-child {
         padding-bottom: 1rem;
     }
 
@@ -775,12 +838,14 @@ footer p {
 
 @media (min-width: 768px) {
 
-    .additionalpics img {
-        border-radius: 10px;
+    .scroll-hide-left,
+    .scroll-hide-right {
+        display: block;
     }
 
-    .aboutinner1,
-    .aboutinner2 {
+
+
+    .aboutinner {
         flex-direction: row;
         padding: 3rem;
         gap: 3rem;
@@ -807,9 +872,7 @@ footer p {
         width: 50%;
     }
 
-    .buttondiv {
-        height: calc(var(--vh) * 0.4);
-    }
+
 
     .aboutimg {
         margin: 0;
@@ -833,7 +896,7 @@ footer p {
     }
 
     .quote-big {
-
+        font-family: ubuntu;
         width: 100%;
         display: flex;
         height: 400px;
@@ -850,13 +913,24 @@ footer p {
     }
 
     .imgscroll-container {
-        position: relative;
         padding-top: 6rem;
         padding-bottom: 3rem;
     }
 
     .infosection {
         flex-direction: row;
+        margin: 15rem auto;
+        margin-bottom: 20rem;
+    }
+
+    .infocard {
+        height: 400px;
+        align-items: flex-start;
+    }
+
+    .infocard:nth-child(3) {
+        width: 600px;
+
     }
 
     /* .scroll-hide-left {
@@ -881,19 +955,14 @@ footer p {
         height: 500px;
     }
 
-    .imgscroll img {
-        height: 100%;
-        max-width: auto;
-        width: auto;
-    }
-
+    /* 
     .additionalpics {
-        /* height: calc(var(--vh) - 333px); */
         padding: 0 1rem;
         gap: 1rem;
         width: auto;
         height: auto;
         justify-content: center;
+        overflow: hidden;
     }
 
     .additionalpics img {
@@ -914,12 +983,52 @@ footer p {
 
     .imgcolumn img {
         width: 50%;
-    }
+    } */
 
     .textcolumn {
         width: 444px;
+        
+        max-width: 600px;
+       
         /* padding: 3rem 2.5rem;
         padding-top: 1.3rem; */
+    }
+
+    .about,
+    .aboutinner {
+        padding: 0;
+    }
+
+    .aboutinner{
+        padding-top: 15rem;
+    }
+    /* .about {
+        padding: 10rem 0;
+    } */
+
+
+    .aboutimg {
+        width: auto;
+        height: auto;
+        margin: 0;
+
+    }
+
+    .aboutimg img {
+        width: 800px;
+        object-fit: contain;
+        
+    }
+
+    /* .aboutimg-first img {
+        border-radius: 0 0 0 50px;
+    } */
+
+   
+    .aboutimg-second img{
+        height: 700px;
+        width: auto;
+        
     }
 
 
@@ -942,6 +1051,26 @@ footer p {
 
     }
 
+    .additionalpics-container,
+    .additionalpics,
+    .imgcolumn {
+        gap: 1rem;
+    }
+
+    .additionalpics-container img {
+        border-radius: 10px;
+    }
+
+    .additionalpics:nth-child(1) {
+        display: flex;
+    }
+
+    .additionalpics {
+        height: 555px;
+        width: 555px;
+    }
+
+
     .gallerypreviewitems {
         padding: 1rem 5rem;
     }
@@ -953,10 +1082,7 @@ footer p {
 
     }
 
-    .about {
-        padding-top: 2rem;
-        gap: 1rem;
-    }
+
 
     .aboutinner1 {
         padding-top: 5rem;
@@ -976,9 +1102,7 @@ footer p {
     } */
 
 
-    .contact {
-        background-color: #c5ebf3;
-    }
+    .contact {}
 
     .contactitems {
         flex-direction: row;
@@ -1044,10 +1168,10 @@ footer p {
 
 @media (min-width: 1400px) {
 
-    .additionalpics img {
+    /* .additionalpics img {
         height: 555px;
         width: 466px;
-    }
+    } */
 
     .contactitems {
         padding: 3rem;

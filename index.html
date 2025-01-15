@@ -9,14 +9,17 @@
     <meta name="description"
         content="Valokuvauspalvelut yrityksille sekä yksityishenkilöille - katso Galleria sekä lue työstäni">
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
 
     <link rel="preload" as="image" href="/images/sininenkuva.webp">
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>https://sininenkuva.netlify.app/images/sininenkuva.webp
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    https://sininenkuva.netlify.app/images/sininenkuva.webp
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
 
     <script defer>
         document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
@@ -28,8 +31,26 @@
             --white: aliceblue;
             --whitewhite: #f8f8f8;
             --black: #080808;
-            --filter1: drop-shadow(0px 0px 7px rgba(50, 50, 50, 0.2));
-            --filter2: drop-shadow(0px 0px 10px rgba(50, 50, 50, 0.2));
+            --filter1: drop-shadow(0px 0px 7px rgba(30, 30, 30, 0.2));
+            --filter2: drop-shadow(0px 0px 10px rgba(30, 30, 30, 0.2));
+            --filter3: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.2));
+
+            --blue-primary: rgb(154, 208, 253);
+        }
+
+        @font-face {
+            font-family: kustomi;
+            src: url('Sansation-Light.ttf');
+        }
+
+        @font-face {
+            font-family: ubuntuL;
+            src: url('Ubuntu-L.ttf');
+        }
+
+        @font-face {
+            font-family: ubuntuR;
+            src: url('Ubuntu-R.ttf');
         }
 
         * {
@@ -39,19 +60,21 @@
         }
 
         body {
-            font-family: "EB Garamond";
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            /* font-family: "EB Garamond"; */
+            font-family: ubuntuL;
+            /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
             font-style: normal;
             font-optical-sizing: auto;
             font-weight: 300;
             line-height: 1.6;
             letter-spacing: 0.6px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             background-color: black;
             overflow-x: hidden;
             color: #252525;
-
+            background-color: black;
         }
+
 
         header {
             position: sticky;
@@ -60,11 +83,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 83px;
+            height: 88px;
             z-index: 1000;
 
             align-items: center;
-            background-color: var(--black);
+            background-color: black;
         }
 
         .headercontent {
@@ -77,7 +100,7 @@
         }
 
         .logocontainer {
-            height: 83px;
+            height: 100%;
             width: auto;
             display: flex;
             align-items: center;
@@ -105,8 +128,9 @@
             justify-content: center;
             align-items: center;
             border: none;
-            background-color: var(--black);
-            padding-right: 2rem;
+            padding: 2rem;
+            background-color: transparent;
+
         }
 
         .menu-trigger:hover {
@@ -116,10 +140,6 @@
         .menu-trigger img {
             /* height: 40px; */
             opacity: 0.9;
-        }
-
-        nav ul {
-            list-style-type: none;
         }
 
 
@@ -133,7 +153,7 @@
             position: absolute;
             width: 100vw;
             height: 0;
-            top: 83px;
+            top: 88px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -154,6 +174,7 @@
             flex-direction: column;
             width: 100%;
             padding-top: 1rem;
+            list-style-type: none;
         }
 
         nav ul a {
@@ -202,8 +223,8 @@
         }
 
         .cover {
-            height: calc(var(--vh) - 83px);
-            background-color: var(--whitewhite);
+            height: calc(var(--vh) - 88px);
+            background-color: #111;
 
         }
 
@@ -240,12 +261,13 @@
             align-items: center;
             justify-content: center;
             /* background-image: linear-gradient(to bottom left, rgb(200, 225, 255), rgb(169, 207, 255)); */
-            background-color: var(--whitewhite);
             flex-grow: 1;
-            padding: 0 2rem;
+            padding: 0 3rem;
             font-size: 1.3rem;
             text-align: center;
-            color: rgb(50, 50, 50);
+            color: var(--whitewhite);
+            max-width: 555px;
+            margin: 0 auto;
         }
 
         @media (min-width: 768px) {
@@ -387,33 +409,47 @@
                     <img class="lazy-image auto-scroll-elem" data-src="/images/pressimage3.webp"
                         alt="Press image example" />
                 </div>
+                <div class="scroll-hide-left"></div>
+                <div class="scroll-hide-right"></div>
             </div>
-            <div class="scroll-hide-left"></div>
-            <div class="scroll-hide-right"></div>
+
 
             <div class="dot-container"></div> <!-- Dots will go here -->
             <div class="infosection">
+
+                <img class="infosectionimg" src="images/sininenglow.png" alt="background hue">
+
                 <div class="infocard">
                     <h2>Kuvauspalvelut</h2>
+                    <p>Tarjoan joustavasti seuraavia valokuvauspalveluita:</p>
                     <ul>
-                        <li>1. palvelu</li>
-                        <li>2. palvelu</li>
-                        <li>3. palvelu</li>
-                        <li>4. palvelu</li>
+
+                        <li>Yrityskuvaukset</li>
+                        <li>Tuotekuvaukset</li>
+                        <li>Mainoskuvaukset</li>
+                        <li>Muotikuvaukset</li>
+                        <li>Lehtikuvaukset</li>
                     </ul>
                 </div>
                 <div class="infocard">
                     <h2>Paikkakunnat</h2>
-                    <ul>
-                        <li>1. paikkakunta</li>
-                        <li>2. paikkakunta</li>
-                        <li>3. paikkakunta</li>
-                        <li>4. paikkakunta</li>
-                    </ul>
+                    <p>Työskentelen Uudellamaalla sekä tarpeen mukaan muualla Suomessa sekä ulkomailla. Voit tiedustella
+                        minulta kuvausjärjestelyistä mikäli tarvitsemasi kuvauspalvelut vaativat matkustamista
+                        kuvauspaikalle.</p>
                 </div>
             </div>
 
             <div class="additionalpics-container">
+                <div class="additionalpics">
+                    <div class="imgcolumn">
+                        <img class="lazy-image img1" data-src="/images/laajis.webp" alt="Portfolio picture example"
+                            width="5591" height="3727" />
+                        <img class="lazy-image img3" data-src="/images/habitare.webp" alt="Portfolio picture example"
+                            width="5281" height="3520" />
+                    </div>
+                    <img class="lazy-image img2" data-src="/images/pose.webp" alt="Portfolio picture example"
+                        width="3626" height="5565" />
+                </div>
                 <div class="additionalpics">
                     <div class="imgcolumn">
                         <img class="lazy-image img1" data-src="/images/laajis.webp" alt="Portfolio picture example"
@@ -431,32 +467,34 @@
         </section>
 
         <section class="about">
-            <div class="aboutinner1">
-                <p class="textcolumn">
-                    <span class="larger bolder">Etsitkö </span>yrityksellesi
-                    ammattivalokuvaajaa, joka hallitsee tekniikan
-                    lisäksi myös kuvaustilanteen tunnelman luomisen parhaan lopputuloksen
-                    saamiseksi? Olet juuri oikeassa paikassa, lämpimästi tervetuloa
-                    kuvien maailmaan!
-                </p>
-                <p class="textcolumn">
-                    Sininen Kuva on täyden palvelun laatustudio, jonka perustaja
-                    olen minä, valokuvaaja Sini Pennanen. Sininen kuva tarjoaa
-                    käyttöösi kaiken osaamiseni ja kokemukseni, joita olen
-                    vuosien varrella saanut erilaisten ihmisten ja yritysten
-                    kanssa toimiessani.
-                </p>
-            </div>
+            <div class="aboutinner">
 
-            <div class="aboutinner2">
-                <div class="aboutimg">
-                    <img class="lazy-image kuvaaja" data-src="/images/aboutme.webp" alt="Sini Pennanen profile picture"
+                <p class="textcolumn bluecard">
+                    <span class="larger bolder">Etsitkö </span> yrityksellesi ammattivalokuvaajaa, joka hallitsee
+                    kuvaustekniikan sekä kuvaustilanteen tunnelman luomisen parhaan lopputuloksen saamiseksi? Olet
+                    juuri oikeassa paikassa, lämpimästi tervetuloa Siniseen Kuvaan!
+                </p>
+                <div class="aboutimg aboutimg-first">
+                    <img class="lazy-image" data-src="/images/about2.webp" alt="Sini Pennanen profile picture" />
+                </div>
+            </div>
+            <div class="aboutinner">
+                <div class="aboutimg aboutimg-second">
+                    <img class="lazy-image" data-src="/images/aboutme.webp" alt="Sini Pennanen profile picture"
                         width="2453" height="3112" />
                 </div>
-                <div class="textcolumncontainer">
-                    <p class="textcolumn">
-                        Kuvaan useille Suomen johtaville yrityksille, sekä mainos- ja viestintätoimistoille
-                        ja lehtitaloille mainontaa ja lehtikuvia. Töitäni voit nähdä
+                <div class="textcolumns">
+                    <p class="textcolumn bluecard">
+                        Sininen Kuva on täyden palvelun valokuvausstudio, jonka perustaja
+                        olen minä, valokuvaaja Sini Pennanen. Sininen Kuva tarjoaa
+                        käyttöösi kaiken osaamiseni ja kokemukseni, mitä olen
+                        vuosien varrella saanut erilaisten ihmisten ja yritysten
+                        kanssa toimiessani.
+                    </p>
+
+                    <p class="textcolumn bluecard">
+                        Kuvaan useille Suomen johtaville yrityksille sekä mainos- ja viestintätoimistoille. Töitäni voit
+                        nähdä
                         muun muassa aikakausi- ja asiakaslehdissä sekä mainoksissa Suomessa
                         ja muualla Euroopassa.
                         <!-- Aloitin valokuvamallina v. 1996 ja siirryin sujuvasti
@@ -464,19 +502,26 @@
                         antanut minulle perspektiiviä kuvaamiseen ja siihen miten
                         ohjata ihmistä kameran edessä. -->
                     </p>
-
-                    <p class=" textcolumn">
-                        <span class="larger bolder">Parasta </span>työssäni on olla osa tiimiä ja tuottaa upea
-                        lopputulos yhteistyönä. Pidän kaikista työni vaiheista:
-                        autolla ajamisesta kuvauspaikoille, kuvauksista, ihmisistä,
-                        kuvausjärjestelyistä aina kuvien viimeistelyyn saakka. On
-                        hienoa, että saan tehdä töitä toinen toistaan mukavampien
-                        kuvausjärjestelijöiden, stailistien, toimittajien,
-                        graafikoiden, markkinointi- ja viestintäalan ihmisten sekä
-                        tietysti asiakkaiden kanssa.
-                    </p>
                 </div>
-                <!-- <div class="aboutimg aboutimg2">
+
+
+            </div>
+
+            <div class="aboutinner">
+
+                <div class="aboutimg aboutimg-third">
+                    <img class="lazy-image kuvaaja" data-src="/images/about3.webp"
+                        alt="Sini Pennanen profile picture" />
+                </div>
+                <p class="textcolumn bluecard">
+                    <span class="larger bolder">Parasta </span>työssäni on ihmisten kanssa työskentely sekä upean
+                    lopputuloksen aikaansaaminen yhteistyönä. On
+                    hienoa, että saan tehdä töitä erilaisten ihmisten kanssa: yhteistyö muun muassa
+                    kuvausjärjestelijöiden, stailistien, toimittajien,
+                    graafikoiden sekä markkinointi- ja viestintäalan ihmisten kanssa on keskeisessä osassa työssäni.
+                </p>
+            </div>
+            <!-- <div class="aboutimg aboutimg2">
                     <img src="/images/kuvaaja2.jpg" alt="" class="kuvaaja2" />
                 </div> -->
             </div>
@@ -562,19 +607,23 @@
                                     <p><big>Palvelu</big></p>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option1" name="option1" />
-                                        <label for="option1">Eka</label>
+                                        <label for="option1">Yrityskuvaukset</label>
                                     </div>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option2" name="option2" />
-                                        <label for="option2">Toka</label>
+                                        <label for="option2">Tuotekuvaukset</label>
                                     </div>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option3" name="option3" />
-                                        <label for="option3">Kolmas</label>
+                                        <label for="option3">Mainoskuvaukset</label>
                                     </div>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option4" name="option4" />
-                                        <label for="option4">Neljäs</label>
+                                        <label for="option4">Muotikuvaukset</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option5" name="option4" />
+                                        <label for="option5">Lehtikuvaukset</label>
                                     </div>
                                 </div>
                                 <div class="formcolumn checkboxcolumn">
