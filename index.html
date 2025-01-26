@@ -258,6 +258,10 @@
             z-index: 10;
         }
 
+        .quote-big {
+            display: none;
+        }
+
         @media (min-width: 768px) {
             .quote-small {
                 font-size: 1.5rem;
@@ -272,6 +276,29 @@
 
             .quote-small {
                 display: none;
+            }
+
+            .quote-big {
+                width: 100%;
+                display: flex;
+                height: 500px;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.7rem;
+                background-image: linear-gradient(var(--whitewhite), rgb(184, 215, 255));
+                font-family: ubuntuL;
+                color: black;
+            }
+
+            .quotecard {
+                height: 80%;
+                min-width: fit-content;
+                padding: 0 4rem;
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .dropdown {
@@ -300,7 +327,7 @@
 
         @media (min-width: 1536px) {}
 
-        @media (min-width: 2000px) {
+        @media (min-width: 1920px) {
             body {
                 font-size: 1.4rem;
             }
@@ -310,6 +337,9 @@
                 width: auto;
             }
 
+            .quote-big {
+                height: 550px;
+            }
         }
     </style>
 
