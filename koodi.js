@@ -183,25 +183,26 @@ scrollContainer.addEventListener('touchmove', (e) => {
     }, { passive: false });
 });
 
+const targets = document.querySelectorAll('.infocard, .textcolumn, .infobox');
 
-// change background color on scroll
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing after visibility
+            }
+        });
+    },
+    {
+        root: null,
+        threshold: 0.8,
+    }
+);
 
-// const target = document.getElementById('gallerypreview');
+// Observe each target
+targets.forEach((target) => observer.observe(target));
 
-// const observer = new IntersectionObserver(
-//     ([entry]) => {
-//         if (entry.isIntersecting) {
-//             target.style.backgroundColor = '#111';
-//         } else {
-//             target.style.backgroundColor = 'white';
-//         }
-//     },
-//     {
-//         root: null,
-//         threshold: 0.1,
-//     }
-// );
-// observer.observe(target);
 
 
 // const galleryPreviewSection = document.querySelector("#gallerypreview");
