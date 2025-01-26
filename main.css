@@ -1,3 +1,23 @@
+.pop {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.pop.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+
+.fade.visible {
+    opacity: 1;
+}
+
 .closed {
     height: 0;
     opacity: 0;
@@ -167,15 +187,8 @@ h2 {
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.5s, transform 0.5s;
 }
 
-.infocard.visible {
-    opacity: 1;
-    transform: scale(1);
-}
 
 .infocard ul {
     padding-left: 2rem;
@@ -306,22 +319,14 @@ h2 {
     font-weight: 300;
     font-style: normal;
     max-width: 400px;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.5s, transform 0.5s;
-
 }
 
-.textcolumn.visible {
-    opacity: 1;
-    transform: scale(1);
-}
 
 
 .textcolumns {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 
@@ -505,18 +510,7 @@ h2 {
     gap: 1rem;
     border: 3px solid rgb(154, 208, 255);
     border-radius: 50px;
-    opacity: 0;
-    transform: scale(0);
-    transition: opacity 0.5s, transform 0.5s;
 }
-
-.infobox.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-
 
 
 .infoboxitem {
@@ -685,6 +679,7 @@ input[type="submit"] {
     background-image: url('/images/sininenglow.webp');
     background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .modal-content {
@@ -880,15 +875,8 @@ footer p {
     .aboutinner {
         flex-direction: row;
         padding: 3rem;
-        gap: 3rem;
+        gap: 5rem;
     }
-
-    .aboutinner2 {
-        flex-direction: column;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
 
     .textcolumncontainer {
         flex-direction: row;
@@ -902,10 +890,6 @@ footer p {
 
     .textcolumncontainer .textcolumn {
         width: 50%;
-    }
-
-    .aboutimg {
-        margin: 0;
     }
 
     .custombutton:hover {
@@ -1028,18 +1012,20 @@ footer p {
     }
 
     .aboutinner {
-        padding-top: 15rem;
+        padding-top: 10rem;
     }
-
-    /* .about {
-        padding: 10rem 0;
-    } */
 
 
     .aboutimg {
+        margin: 0;
+        border-radius: 10px;
         width: 50%;
         object-fit: contain;
         max-width: none;
+    }
+
+    .aboutimg-second {
+        border-radius: 10px;
     }
 
     iframe {
@@ -1074,16 +1060,6 @@ footer p {
         padding-bottom: 9rem;
     }
 
-
-    .aboutinner1 {
-        padding-top: 5rem;
-    }
-
-    .aboutinner2 {
-        flex-direction: row;
-        gap: 5rem;
-    }
-
     .textcolumncontainer {
         width: 50%;
     }
@@ -1097,11 +1073,6 @@ footer p {
     .aboutimg-second {
         height: 650px;
     }
-
-
-    /* .aboutinner2 .textcolumn {
-        max-width: 30%;
-    } */
 
     .gallerypreview {
         padding: 3rem 0;

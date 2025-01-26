@@ -48,7 +48,7 @@ const closeBtn = document.getElementById('closeModal');
 const videoFrame = document.getElementById('youtubeVideo');
 
 // Replace this with your YouTube video URL
-const videoURL = "https://www.youtube.com/embed/u2Qc9QYISyQ?controls=0";
+const videoURL = "https://www.youtube.com/embed/u2Qc9QYISyQ?controls=1";
 // Open Modal
 openBtn.addEventListener('click', () => {
     videoFrame.src = videoURL; // Set video source
@@ -183,7 +183,7 @@ scrollContainer.addEventListener('touchmove', (e) => {
     }, { passive: false });
 });
 
-const targets = document.querySelectorAll('.infocard, .textcolumn, .infobox');
+const targets = document.querySelectorAll('.pop, .fade');
 
 const observer = new IntersectionObserver(
     (entries) => {
@@ -196,7 +196,7 @@ const observer = new IntersectionObserver(
     },
     {
         root: null,
-        threshold: 0.8,
+        threshold: 0.7,
     }
 );
 
