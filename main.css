@@ -1,8 +1,3 @@
-nav ul a:hover,
-nav ul button:hover {
-    color: rgb(137, 255, 255);
-}
-
 .closed {
     height: 0;
     opacity: 0;
@@ -240,11 +235,11 @@ h2 {
 .custombutton {
     display: inline;
     padding: 0.9rem 1.8rem;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 25px;
     color: white;
     overflow: hidden;
-    transition: padding-right 0.2s ease-out;
+    transition: padding-right 0.2s ease-out, transform 0.2s ease-out;
 
 }
 
@@ -257,22 +252,13 @@ h2 {
     /* Smooth transitions */
     display: inline-block;
     justify-content: center;
+
     /* Prevent spacing issues */
 
 }
 
-.custombutton:hover {
-    padding-right: 25px;
-    /* Increase padding to fit arrow */
-}
 
-.custombutton:hover .arrow {
-    opacity: 1;
-    /* Make arrow visible */
-    transform: translateX(0);
-    width: 1rem;
-    /* Move arrow into place */
-}
+
 
 .about,
 .aboutinner {
@@ -284,8 +270,8 @@ h2 {
     background-color: white;
     font-family: ubuntuR;
     color: var(--black);
+    position: relative;
 }
-
 
 .aboutinner {
     max-width: 1920px;
@@ -309,15 +295,17 @@ h2 {
     padding: 2rem;
     padding-top: 1.5rem;
     /* background-color: #6282b3; */
-    border-radius: 25px;
+    /* border-radius: 25px; */
     font-family: "EB Garamond", serif;
     font-size: 1.4rem;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    max-width: 400px;
 
 }
-.textcolumns{
+
+.textcolumns {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -326,7 +314,7 @@ h2 {
 
 .bluecard {
     background-color: rgb(240, 248, 255);
-    
+
     border-radius: 25px;
     color: black;
 }
@@ -341,29 +329,31 @@ h2 {
     font-weight: bold;
 }
 
-.aboutimg {
+
+.aboutimg,
+.aboutimg-second {
     margin-top: 1.5rem;
-    /* filter: var(--filter1); */
-    background-color: white;
-    overflow: hidden;
-    width: 100%;
-
-
-}
-
-.aboutimg img {
     width: 100%;
     height: auto;
     object-fit: cover;
     object-position: center;
+    max-width: 555px;
 }
 
 
 .about .custombutton {
     background-color: rgb(255, 255, 255);
-    border: 1px solid #111;
+    border: 2px solid #111;
     color: black;
 
+}
+
+.aboutsectionimg {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 /* .screenshotcontainer {
@@ -379,42 +369,27 @@ h2 {
 
 
 .gallerypreview {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     background-color: #111;
-    margin: 0 auto;
+    padding: 1rem 0;
+
 }
 
 .gallerypreviewitems {
-    padding: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 1920px;
+    max-width: 768px;
     margin: 0 auto;
-}
-
-.scrollcontainer1 {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-
+    gap: 1rem;
 }
 
-.scrollcontainer2 {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
 
-.gallerypreview img {
+.gallerypreview-img {
     width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
     overflow: hidden;
-
 }
 
 
@@ -429,7 +404,7 @@ h2 {
         repeating-linear-gradient(0deg, #151515, #151515 1px, transparent 1px, transparent 3rem),
         repeating-linear-gradient(90deg, #151515, #151515 1px, transparent 1px, transparent 3rem); */
     /* background-image: linear-gradient(black, #181c27); */
-    background: rgb(193, 238, 238);
+    /* background: rgb(193, 238, 238); */
     color: white;
 
 
@@ -450,7 +425,8 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: linear-gradient(#151515, #181c27);
+    align-items: center;
+    background-image: linear-gradient(#111, #181c27);
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
@@ -461,7 +437,8 @@ h2 {
     /* margin-top: 5rem; */
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    background: rgb(227, 243, 255);
+
 
 }
 
@@ -508,7 +485,7 @@ h2 {
     /* border-radius: 25px; */
     gap: 1rem;
     border: 3px solid rgb(154, 208, 255);
-    border-radius: 20px;
+    border-radius: 50px;
 
 
 }
@@ -532,16 +509,15 @@ h2 {
 }
 
 form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    /* background-color: rgb(217, 237, 255); */
-    background-color: rgb(233, 237, 241);
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
-    padding: 2rem 3rem;
+    padding: 3rem 5rem;
+    width: 100%;
 }
 
 
@@ -549,6 +525,7 @@ form {
     width: 100%;
     display: flex;
     flex-direction: column;
+    max-width: 500px;
 }
 
 .formcolumn {
@@ -585,25 +562,21 @@ textarea {
     width: 100%;
     padding: 0.5rem;
     padding-left: 0.7rem;
-    background-color: white;
-    border: none;
-    font-size: 1rem;
+    border: 2px solid rgb(222, 222, 222);
     border-radius: 10px;
-
+    font-size: 1rem;
 }
 
 textarea {
     resize: none;
     width: 100%;
-    border: none;
+    border: 2px solid rgb(222, 222, 222);
     border-radius: 10px;
     height: 200px;
 }
 
 .checkboxcolumn {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 
@@ -646,31 +619,25 @@ input[type="submit"] {
     transition: transform 0.1s ease-out;
     margin: 2rem auto;
     margin-bottom: 1rem;
+    font-weight: 300;
 
 
 
-}
-
-.submitbutton:hover {
-    cursor: pointer;
-    transform: translateY(-2px);
 
 }
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
     z-index: 10000;
-    /* On top of other content */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(17, 17, 17, 0.5);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    /* Semi-transparent background */
+    background-color: #111;
+    background-image: url('/images/sininenglow.webp');
+    background-size: 100%;
+    background-position: center;
 }
 
 .modal-content {
@@ -696,7 +663,7 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: #111111;
-    padding: 5rem 0;
+    padding: 7rem 0;
 }
 
 footer p {
@@ -744,19 +711,17 @@ footer p {
         width: 400px;
     }
 
-    .aboutimg {
-        height: 450px;
-        margin: 3rem;
+    .aboutimg,
+    .aboutimg-second {
         margin-top: 3rem;
         margin-bottom: 1rem;
-
     }
 
-    .aboutimg img {
-        height: 100%;
-        width: 100%;
-        border-radius: 25px;
+    .aboutimg-second {
+        height: 600px;
+        width: auto;
     }
+
 
     .infobox {
         /* width: 80%;
@@ -795,7 +760,11 @@ footer p {
         margin-top: 2rem;
     }
 
-    .contact {
+    /* .contact {
+        padding-top: 7rem;
+    } */
+
+    .contactdiv1 {
         padding-top: 7rem;
     }
 
@@ -808,27 +777,19 @@ footer p {
         margin-top: 5rem;
     } */
 
-    form {
-
-        padding: 2rem 3rem;
-
-
-    }
 
     .checkboxrow {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
-    .gallerypreviewitems {
+    /* .gallerypreviewitems {
         padding: 1rem 0;
     }
 
-    .gallerypreviewitems,
-    .scrollcontainer1,
-    .scrollcontainer2 {
+    .gallerypreviewitems {
         gap: 1rem;
-    }
+    } */
 
     iframe {
         width: 500px;
@@ -843,7 +804,25 @@ footer p {
         display: block;
     }
 
+    .textcolumn{
+        max-width: 555px;
+    }
 
+
+    iframe {
+        width: 750px;
+        height: 375px;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+
+    nav ul a:hover,
+    nav ul button:hover {
+        color: rgb(121, 255, 255);
+    }
 
     .aboutinner {
         flex-direction: row;
@@ -872,21 +851,30 @@ footer p {
         width: 50%;
     }
 
-
-
     .aboutimg {
         margin: 0;
     }
 
-    iframe {
-        width: 750px;
-        height: 375px;
+    .custombutton:hover {
+        padding-right: 25px;
+        transform: translateY(-2px);
+        /* Increase padding to fit arrow */
     }
-}
 
+    .custombutton:hover .arrow {
+        opacity: 1;
+        /* Make arrow visible */
+        transform: translateX(0);
+        width: 1rem;
+        /* Move arrow into place */
+    }
 
+    .submitbutton:hover {
+        cursor: pointer;
+        transform: translateY(-2px);
 
-@media (min-width: 1024px) {
+    }
+
     .kansikuva {
         height: 100%;
     }
@@ -896,16 +884,26 @@ footer p {
     }
 
     .quote-big {
-        font-family: ubuntu;
         width: 100%;
         display: flex;
-        height: 400px;
+        height: 500px;
         justify-content: center;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         background-image: linear-gradient(var(--whitewhite), rgb(184, 215, 255));
+        font-family: ubuntuL;
+        color: black;
+    }
 
-
+    .quotecard{
+        height: 80%;
+        min-width: fit-content;
+        padding: 0 4rem;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .portfolio {
@@ -987,9 +985,9 @@ footer p {
 
     .textcolumn {
         width: 444px;
-        
+
         max-width: 600px;
-       
+
         /* padding: 3rem 2.5rem;
         padding-top: 1.3rem; */
     }
@@ -999,38 +997,20 @@ footer p {
         padding: 0;
     }
 
-    .aboutinner{
+    .aboutinner {
         padding-top: 15rem;
     }
+
     /* .about {
         padding: 10rem 0;
     } */
 
 
     .aboutimg {
-        width: auto;
-        height: auto;
-        margin: 0;
-
-    }
-
-    .aboutimg img {
-        width: 800px;
+        width: 50%;
         object-fit: contain;
-        
+        max-width: none;
     }
-
-    /* .aboutimg-first img {
-        border-radius: 0 0 0 50px;
-    } */
-
-   
-    .aboutimg-second img{
-        height: 700px;
-        width: auto;
-        
-    }
-
 
     iframe {
         width: 950px;
@@ -1039,17 +1019,6 @@ footer p {
 }
 
 @media (min-width: 1280px) {
-
-
-
-    .scrollcontainer1,
-    .scrollcontainer2 {
-        flex-direction: row;
-        width: 100%;
-        height: auto;
-        /* gap: 3rem; */
-
-    }
 
     .additionalpics-container,
     .additionalpics,
@@ -1070,18 +1039,10 @@ footer p {
         width: 555px;
     }
 
-
-    .gallerypreviewitems {
-        padding: 1rem 5rem;
+    .buttondiv {
+        padding-top: 7rem;
+        padding-bottom: 9rem;
     }
-
-    .gallerypreviewitem {
-        width: 50%;
-        height: auto;
-
-
-    }
-
 
 
     .aboutinner1 {
@@ -1097,29 +1058,37 @@ footer p {
         width: 50%;
     }
 
+    .aboutimg {
+        width: 55%;
+        object-fit: contain;
+        max-width: none;
+    }
+
+    .aboutimg-second{
+        height: 650px;
+    }
+
+
     /* .aboutinner2 .textcolumn {
         max-width: 30%;
     } */
 
+    .gallerypreview {
+        padding: 3rem 0;
+    }
 
-    .contact {}
+    .contact {
+        background: rgb(227, 243, 255);
+    }
 
     .contactitems {
         flex-direction: row;
-
-
-
     }
 
 
     form {
-        background: none;
         color: black;
-        background-color: rgb(238, 242, 246);
-        border-top-left-radius: 25px;
-        filter: var(--filter1);
-
-
+        width: fit-content;
     }
 
     .headerandsocials {
@@ -1142,7 +1111,9 @@ footer p {
         padding-top: 0;
     }
 
-
+    .contact {
+        padding: 5rem 0;
+    }
 
 
     .contact h2 {
@@ -1152,8 +1123,7 @@ footer p {
 
     .infobox {
         border: none;
-        background-color: var(--whitewhite);
-        filter: var(--filter1);
+        background-color: rgba(255, 255, 255, 0.8);
     }
 
     .infobutton {
@@ -1173,18 +1143,20 @@ footer p {
         width: 466px;
     } */
 
+    .gallerypreview {
+        padding: 1rem 0;
+    }
+
+    .gallerypreviewitems {
+        flex-direction: row;
+        max-width: none;
+    }
+
     .contactitems {
         padding: 3rem;
-        gap: 5rem;
+        gap: 3rem;
     }
 
-    form {
-        border-radius: 25px;
-    }
-
-    .contactdiv1 {
-        width: 40%;
-    }
 }
 
 @media (min-width: 1920px) {
@@ -1193,11 +1165,4 @@ footer p {
     }
 
 
-    .gallerypreviewitems {
-        padding: 1rem 0;
-    }
-
-    form {
-        border-radius: 25px;
-    }
 }

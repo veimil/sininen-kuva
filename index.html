@@ -16,11 +16,6 @@
     <link rel="preload" as="image" href="/images/sininenkuva.webp">
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    https://sininenkuva.netlify.app/images/sininenkuva.webp
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet">
-
     <script defer>
         document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
     </script>
@@ -38,10 +33,6 @@
             --blue-primary: rgb(154, 208, 253);
         }
 
-        @font-face {
-            font-family: kustomi;
-            src: url('Sansation-Light.ttf');
-        }
 
         @font-face {
             font-family: ubuntuL;
@@ -79,7 +70,7 @@
         header {
             position: sticky;
             position: -webkit-sticky;
-            /* Safari */
+
             top: 0;
             left: 0;
             width: 100%;
@@ -87,7 +78,7 @@
             z-index: 1000;
 
             align-items: center;
-            background-color: black;
+            background-color: #111;
         }
 
         .headercontent {
@@ -108,7 +99,7 @@
         }
 
         .logocontainer img {
-            height: 37px;
+            height: 40px;
             width: auto;
             object-fit: contain;
             opacity: 0.9;
@@ -177,13 +168,14 @@
             list-style-type: none;
         }
 
-        nav ul a {
+        .nav-link {
             display: flex;
             align-items: center;
             position: relative;
             height: 4rem;
             padding-left: 2rem;
             color: var(--white);
+            font-family: ubuntuR;
 
         }
 
@@ -216,14 +208,9 @@
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        main {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
 
         .cover {
-            height: calc(var(--vh) - 88px);
+            height: calc(var(--vh) - 155px);
             background-color: #111;
 
         }
@@ -265,9 +252,10 @@
             padding: 0 3rem;
             font-size: 1.3rem;
             text-align: center;
-            color: var(--whitewhite);
+            color: white;
             max-width: 555px;
             margin: 0 auto;
+            z-index: 10;
         }
 
         @media (min-width: 768px) {
@@ -278,21 +266,13 @@
 
         @media (min-width: 1024px) {
 
-
             .coverimg {
                 height: 100%;
-
             }
-
-
 
             .quote-small {
                 display: none;
             }
-
-        }
-
-        @media (min-width: 1280px) {
 
             .dropdown {
                 width: 0;
@@ -303,8 +283,17 @@
 
             .open {
                 height: 100vh;
-                width: 25vw;
+                width: 33vw;
                 opacity: 1;
+            }
+
+        }
+
+
+        @media (min-width: 1280px) {
+
+            .open {
+                width: 27vw;
             }
 
         }
@@ -339,9 +328,9 @@
     <div class="overlay" onclick="toggleDropdown()"></div>
     <header>
         <div class="headercontent">
-            <div class="logocontainer">
+            <a class="logocontainer" href="/">
                 <img src="/images/logo-light.webp" alt="Sininen Kuva logo" id="logoimage" width="700" height="159" />
-            </div>
+            </a>
             <div class="nav-wrapper">
                 <button class="menu-trigger" onclick="toggleDropdown()">
                     <img src="/images/menu-blue.svg" alt="menu icon" width="40" height="40" />
@@ -350,22 +339,22 @@
                     <nav aria-label="Main navigation">
                         <ul>
                             <li>
-                                <a href="/">
+                                <a class="nav-link" href="/">
                                     Koti
                                 </a>
                             </li>
                             <li>
-                                <a href="/gallery">
+                                <a class="nav-link" href="/gallery">
                                     Galleria
                                 </a>
                             </li>
                             <li>
-                                <button type="button" id="openVideo">
+                                <button class="nav-link" type="button" id="openVideo">
                                     Katso video
                                 </button>
                             </li>
                             <li>
-                                <a href="/#contact">
+                                <a class="nav-link" href="/#contact">
                                     Yhteystiedot
                                 </a>
                             </li>
@@ -391,10 +380,12 @@
     </section>
 
     <main>
-        <p class="quote-big">
-            "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
-            näkee"
-        </p>
+        <div class="quote-big">
+            <div class="quotecard">
+                "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
+                näkee"
+            </div>
+        </div>
         <section class="portfolio">
             <div class="imgscroll-container">
                 <div class="imgscroll">
@@ -423,7 +414,6 @@
                     <h2>Kuvauspalvelut</h2>
                     <p>Tarjoan joustavasti seuraavia valokuvauspalveluita:</p>
                     <ul>
-
                         <li>Yrityskuvaukset</li>
                         <li>Tuotekuvaukset</li>
                         <li>Mainoskuvaukset</li>
@@ -433,7 +423,7 @@
                 </div>
                 <div class="infocard">
                     <h2>Paikkakunnat</h2>
-                    <p>Työskentelen Uudellamaalla sekä tarpeen mukaan muualla Suomessa sekä ulkomailla. Voit tiedustella
+                    <p>Työskentelen Uudellamaalla ja tarpeen mukaan muualla Suomessa sekä ulkomailla. Voit tiedustella
                         minulta kuvausjärjestelyistä mikäli tarvitsemasi kuvauspalvelut vaativat matkustamista
                         kuvauspaikalle.</p>
                 </div>
@@ -462,11 +452,12 @@
                 </div>
             </div>
             <div class="buttondiv">
-                <a class="custombutton" href="/galleria">Galleria <span class="arrow">&rightarrow;</span></a>
+                <a class="custombutton" href="/galleria">Galleria <span class="arrow">></span></a>
             </div>
         </section>
 
         <section class="about">
+
             <div class="aboutinner">
 
                 <p class="textcolumn bluecard">
@@ -474,15 +465,15 @@
                     kuvaustekniikan sekä kuvaustilanteen tunnelman luomisen parhaan lopputuloksen saamiseksi? Olet
                     juuri oikeassa paikassa, lämpimästi tervetuloa Siniseen Kuvaan!
                 </p>
-                <div class="aboutimg aboutimg-first">
-                    <img class="lazy-image" data-src="/images/about2.webp" alt="Sini Pennanen profile picture" />
-                </div>
+
+                <img class="aboutimg lazy-image" data-src="/images/about2.webp" alt="Sini Pennanen profile picture" />
+
             </div>
             <div class="aboutinner">
-                <div class="aboutimg aboutimg-second">
-                    <img class="lazy-image" data-src="/images/aboutme.webp" alt="Sini Pennanen profile picture"
-                        width="2453" height="3112" />
-                </div>
+
+                <img class="aboutimg-second lazy-image" data-src="/images/abouteka.webp"
+                    alt="Sini Pennanen profile picture" width="2453" height="3112" />
+
                 <div class="textcolumns">
                     <p class="textcolumn bluecard">
                         Sininen Kuva on täyden palvelun valokuvausstudio, jonka perustaja
@@ -509,10 +500,8 @@
 
             <div class="aboutinner">
 
-                <div class="aboutimg aboutimg-third">
-                    <img class="lazy-image kuvaaja" data-src="/images/about3.webp"
-                        alt="Sini Pennanen profile picture" />
-                </div>
+                <img class="aboutimg aboutimg-third lazy-image" data-src="/images/about3.webp"
+                    alt="Sini Pennanen profile picture" />
                 <p class="textcolumn bluecard">
                     <span class="larger bolder">Parasta </span>työssäni on ihmisten kanssa työskentely sekä upean
                     lopputuloksen aikaansaaminen yhteistyönä. On
@@ -529,36 +518,30 @@
                 <a class="custombutton"
                     href="https://tyopaikat.oikotie.fi/tyontekijalle/artikkelit/tyon-ytimessa-valokuvaaja-sini-pennanen"
                     target="_blank">
-                    Lue lisää työstäni <span class="arrow">&rightarrow;</span>
+                    Lue lisää työstäni <span class="arrow">></span>
                 </a>
             </div>
         </section>
 
 
-        <section class="gallerypreview">
+        <section class="gallerypreview" id="gallerypreview">
+
             <div class="gallerypreviewitems">
-                <div class="scrollcontainer1">
 
-                    <img class="lazy-image" data-src="/images/galleryimg1.webp"
-                        alt="Gallery image about song contest" />
+                <img class="lazy-image gallerypreview-img" data-src="/images/galleryimg1.webp" alt="" />
 
-                    <img class="lazy-image" data-src="/images/galleryimg4.webp" alt="Gallery image about buildings" />
-                </div>
+                <img class="lazy-image gallerypreview-img" data-src="/images/galleryimg4.webp" alt="" />
 
-                <div class="scrollcontainer2">
+                <img class="lazy-image gallerypreview-img" data-src="/images/galleryimg2.webp" alt="" />
 
-                    <img class="lazy-image" data-src="/images/galleryimg2.webp"
-                        alt="Gallery image from Kruunuvuorenranta" />
+                <img class="lazy-image gallerypreview-img" data-src="/images/galleryimg3.webp" alt="" />
 
-
-                    <img class="lazy-image" data-src="/images/galleryimg3.webp"
-                        alt="Gallery image from Kruunuvuorenranta" />
-
-                </div>
             </div>
+
         </section>
 
         <section class="contact" id="contact">
+            <!-- <img class="infosectionimg" src="images/sininenglow.png" alt="background hue"> -->
             <div class="contactitems">
                 <div class="contactdiv1">
                     <div class="headerandsocials">
@@ -590,7 +573,7 @@
                 <div class="contactdiv2">
 
                     <form action="">
-                        <h2>Viesti</h2>
+
                         <div class="formcontent">
                             <div class="formcolumn inputcolumn">
                                 <input type="text" id="etunimi" name="etunimi" placeholder="Etunimi" required />
@@ -674,7 +657,8 @@
         </div>
         <div class="footerlinks">
             <p>&copy; Sininen Kuva 2024 | All rights reserved</p>
-            <p>page by Veikko Milton</p>
+            <a href="https://veikkomilton.com/">page by <span style="text-decoration: underline;">Veikko
+                    Milton</span></a></p>
         </div>
     </footer>
     <script src="koodi.js" defer></script>

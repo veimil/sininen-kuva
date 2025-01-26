@@ -183,3 +183,65 @@ scrollContainer.addEventListener('touchmove', (e) => {
     }, { passive: false });
 });
 
+
+// change background color on scroll
+
+// const target = document.getElementById('gallerypreview');
+
+// const observer = new IntersectionObserver(
+//     ([entry]) => {
+//         if (entry.isIntersecting) {
+//             target.style.backgroundColor = '#111';
+//         } else {
+//             target.style.backgroundColor = 'white';
+//         }
+//     },
+//     {
+//         root: null,
+//         threshold: 0.1,
+//     }
+// );
+// observer.observe(target);
+
+
+// const galleryPreviewSection = document.querySelector("#gallerypreview");
+// const galleryImg = document.querySelector("#gallerypreview-img");
+
+// const sectionOffset = galleryPreviewSection.offsetTop;
+
+// const galleryHeight = window.innerHeight;
+
+// const gallerypreviewimages = [
+//     "/images/galleryimg1.webp",
+//     "/images/galleryimg4.webp",
+//     "/images/galleryimg2.webp",
+//     "/images/galleryimg3.webp",
+// ];
+
+// // Preload all images
+// const preloadImages = () => {
+//     gallerypreviewimages.forEach((src) => {
+//         const img = new Image();
+//         img.src = src;
+//     });
+// };
+
+// preloadImages();
+
+
+// window.addEventListener("scroll", () => {
+//     const scrollY = window.scrollY;
+
+//     gallerypreviewimages.forEach((src, index) => {
+//         const start = sectionOffset + galleryHeight * index;
+//         const end = sectionOffset + galleryHeight * (index + 1);
+
+//         if (scrollY >= start && scrollY < end) {
+//             if (galleryImg.src !== src) {
+//                 galleryImg.src = src;
+//             }
+//         }
+        
+//     });
+// });
+
