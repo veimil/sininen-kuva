@@ -14,12 +14,13 @@
 
     <script>
 
+        document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+
         function setViewportHeight() {
             if (window.innerWidth >= 1024) {
                 document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
             }
         }
-        setViewportHeight();
 
         window.addEventListener("resize", setViewportHeight);
 
