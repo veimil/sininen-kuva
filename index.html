@@ -221,13 +221,24 @@
             flex-direction: column;
             max-width: 1920px;
             margin: 0 auto;
+            background-color: whitesmoke;
         }
 
         .coverimg {
             height: 67%;
             width: 100%;
-            object-fit: cover;
-            object-position: center;
+            /* object-fit: cover;
+            object-position: center; */
+            background-image: url('/images/sininenkuva.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+        .coverimg.loaded {
+            opacity: 1;
         }
 
         .quote-small {
@@ -239,6 +250,7 @@
             padding: 0 3rem;
             font-size: 1.3rem;
             text-align: center;
+            background-color: #111;
             color: white;
             max-width: 555px;
             margin: 0 auto;
@@ -380,8 +392,18 @@
     <section class="cover">
         <div class="coveritems">
             <!-- <div class="coverimg"> -->
-            <img class="coverimg" src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177"
-                height="3094" />
+            <!-- <img class="coverimg" src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177"
+                height="3094" style="opacity: 0;" onload="this.classList.add('loaded')" /> -->
+            <div class="coverimg" id="coverImg"></div>
+            <script>
+                const coverImgDiv = document.getElementById('coverImg');
+                const img = new Image();
+
+                img.src = '/images/sininenkuva.webp';
+                img.onload = () => {
+                    coverImgDiv.classList.add('loaded'); // Add the 'loaded' class
+                };
+            </script>
             <!-- </div> -->
             <p class="quote-small">
                 "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
