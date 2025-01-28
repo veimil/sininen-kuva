@@ -70,11 +70,10 @@
         header {
             position: sticky;
             position: -webkit-sticky;
-
             top: 0;
             left: 0;
             width: 100%;
-            height: 88px;
+            height: 73px;
             z-index: 1000;
 
             align-items: center;
@@ -95,11 +94,11 @@
             width: auto;
             display: flex;
             align-items: center;
-            padding-left: 2rem;
+            padding-left: 1rem;
         }
 
         .logocontainer img {
-            height: 40px;
+            height: 32px;
             width: auto;
             object-fit: contain;
             opacity: 0.9;
@@ -119,7 +118,7 @@
             justify-content: center;
             align-items: center;
             border: none;
-            padding: 2rem;
+            padding: 1rem;
             background-color: transparent;
 
         }
@@ -129,7 +128,7 @@
         }
 
         .menu-trigger img {
-            /* height: 40px; */
+            height: 33px;
             opacity: 0.9;
         }
 
@@ -137,14 +136,14 @@
         a {
             text-decoration: none;
             color: whitesmoke;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .dropdown {
             position: absolute;
             width: 100vw;
             height: 0;
-            top: 88px;
+            top: 73px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -168,6 +167,14 @@
             list-style-type: none;
         }
 
+        nav ul button {
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
         .nav-link {
             display: flex;
             align-items: center;
@@ -176,23 +183,7 @@
             padding-left: 2rem;
             color: rgba(255, 255, 255, 0.9);
             font-family: ubuntuR;
-
         }
-
-        nav ul button {
-            display: flex;
-            align-items: center;
-            position: relative;
-            height: 4rem;
-            padding-left: 2rem;
-            color: var(--white);
-            background-color: transparent;
-            border: none;
-            font-size: 1.3rem;
-            cursor: pointer;
-            width: 100%;
-        }
-
 
         .overlay {
             position: fixed;
@@ -211,7 +202,7 @@
 
 
         .cover {
-            height: calc(var(--vh) - 88px);
+            height: calc(var(--vh) - 73px);
             background-color: #111;
         }
 
@@ -252,7 +243,7 @@
             padding: 0 3rem;
             font-size: 1.3rem;
             text-align: center;
-            background-color: #111;
+            background-image: linear-gradient(#181c27, #111);
             color: white;
             margin: 0 auto;
             z-index: 10;
@@ -263,6 +254,31 @@
         }
 
         @media (min-width: 768px) {
+
+            header {
+                height: 88px;
+            }
+
+            .logocontainer {
+                padding-left: 2rem;
+            }
+
+            .menu-trigger {
+                padding: 2rem;
+            }
+
+            .menu-trigger img {
+                height: 40px;
+            }
+
+            .logocontainer img {
+                height: 37px;
+            }
+
+            .dropdown {
+                top: 88px;
+            }
+
             .quote-small {
                 font-size: 1.5rem;
             }

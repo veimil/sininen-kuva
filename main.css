@@ -330,14 +330,14 @@ h2 {
 }
 
 .textcolumn {
-    margin: 0 1rem;
+    margin: 0 2rem;
     margin-top: 1.5rem;
     padding: 2rem;
     padding-top: 1.5rem;
     /* background-color: #6282b3; */
     /* border-radius: 25px; */
     font-family: "EB Garamond", serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-optical-sizing: auto;
     font-style: normal;
     max-width: 400px;
@@ -350,7 +350,6 @@ h2 {
 .textcolumns {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 }
 
 
@@ -364,11 +363,11 @@ h2 {
 
 .larger {
     font-size: 1.3em;
-    color: rgb(101, 183, 255);
+    color: rgb(85, 206, 222);
 }
 
 .bolder {
-    font-weight: bold;
+    font-family: ubuntuR;
 }
 
 
@@ -387,7 +386,7 @@ h2 {
     background-color: rgb(255, 255, 255);
     border: 2px solid #222;
     color: #222;
-    font-family: ubuntuR;
+    font-family: ubuntuL;
 
 }
 
@@ -520,7 +519,7 @@ h2 {
 
 .infoboxitem {
     color: var(--white);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .infobutton {
@@ -542,6 +541,7 @@ form {
     width: 100%;
     font-size: 1.1rem;
     border-radius: 25px;
+    font-weight: 300;
 }
 
 
@@ -675,6 +675,7 @@ input[type="submit"] {
     margin: 2rem auto;
     margin-bottom: 1rem;
     border: 2px solid #222;
+    font-weight: 300;
 }
 
 .modal {
@@ -715,7 +716,7 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: #111111;
-    padding: 7rem 0;
+    padding: 5rem 0;
     font-family: ubuntuL;
 }
 
@@ -863,6 +864,7 @@ footer p {
 
     .textcolumn {
         max-width: 555px;
+        font-size: 1.2rem;
     }
 
 
@@ -870,6 +872,10 @@ footer p {
     iframe {
         width: 750px;
         height: 375px;
+    }
+
+    footer {
+        padding: 7rem 0;
     }
 }
 
@@ -900,6 +906,11 @@ footer p {
 
     .textcolumncontainer .textcolumn {
         width: 50%;
+    }
+
+    .textcolumns {
+        gap: 2rem;
+
     }
 
     .custombutton:hover {
