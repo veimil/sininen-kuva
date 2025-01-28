@@ -12,8 +12,13 @@
     <link rel="preload" as="image" href="/images/sininenkuva.webp">
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
-    <script defer>
-        document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+    <script>
+        function setViewportHeight() {
+            document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+        }
+        setViewportHeight();
+
+        window.addEventListener("resize", setViewportHeight);
     </script>
 
     <!-- Critical CSS -->
@@ -235,6 +240,7 @@
         }
 
         .quote-small {
+            font-family: ubuntuL;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -568,14 +574,17 @@
 
                             <a class="contactsvg social" href="https://www.instagram.com/sininenkuva/"
                                 target="_blank"><img class="lazy-image" data-src="/images/insta.svg"
-                                    data-large-src="/images/instablack.svg" alt="Instagram logo" /></a>
+                                    data-large-src="/images/instablack.svg" data-small-src="/images/insta.svg"
+                                    alt="Instagram logo" /></a>
 
                             <a class="contactsvg social" href="https://www.linkedin.com/in/sini-pennanen-baaa3b63/"
                                 target="_blank"><img class="lazy-image" data-src="/images/linkkari.svg"
-                                    data-large-src="/images/linkkariblack.svg" alt="LinkedIn logo" /></a>
+                                    data-large-src="/images/linkkariblack.svg" data-small-src="/images/linkkari.svg"
+                                    alt="LinkedIn logo" /></a>
                             <a class="contactsvg social" href="https://www.facebook.com/sininenkuva.fi/"
                                 target="_blank"><img class="lazy-image" data-src="/images/face.svg"
-                                    data-large-src="/images/faceblack.svg" alt="Facebook logo" /></a>
+                                    data-large-src="/images/faceblack.svg" data-small-src="/images/face.svg"
+                                    alt="Facebook logo" /></a>
                         </div>
                     </div>
 
@@ -606,6 +615,7 @@
                             <div class="checkboxrow">
                                 <div class="formcolumn checkboxcolumn">
                                     <p><big>Palvelu</big></p>
+                                    <hr>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option1" name="option1" />
                                         <label for="option1">Yrityskuvaukset</label>
@@ -628,22 +638,23 @@
                                     </div>
                                 </div>
                                 <div class="formcolumn checkboxcolumn">
-                                    <p><big>Olen kiinnostunut myös</big></p>
-                                    <div class="checkboxandlabel">
-                                        <input type="checkbox" id="option5" name="option5" />
-                                        <label for="option5">Videokuvaus</label>
-                                    </div>
+                                    <p><big>Kiinnostunut myös</big></p>
+                                    <hr>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option6" name="option6" />
-                                        <label for="option6">Meikkaaja/stylisti</label>
+                                        <label for="option6">Videokuvaus</label>
                                     </div>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option7" name="option7" />
-                                        <label for="option7">Toimittaja/copywriter</label>
+                                        <label for="option7">Meikkaaja/stylisti</label>
                                     </div>
                                     <div class="checkboxandlabel">
                                         <input type="checkbox" id="option8" name="option8" />
-                                        <label for="option8">Kuvausjärjestelijä</label>
+                                        <label for="option8">Toimittaja/copywriter</label>
+                                    </div>
+                                    <div class="checkboxandlabel">
+                                        <input type="checkbox" id="option9" name="option9" />
+                                        <label for="option9">Kuvausjärjestelijä</label>
                                     </div>
                                 </div>
                             </div>
@@ -685,7 +696,7 @@
         link.href = "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap";
         link.rel = "stylesheet";
         document.head.appendChild(link);
-      </script>
+    </script>
 </body>
 
 </html>

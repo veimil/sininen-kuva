@@ -66,14 +66,19 @@ window.addEventListener('click', (e) => {
 
 
 function updateImageSrc() {
-    const isLargeScreen = window.innerWidth >= 1280; // Check screen size
+    const isLargeScreen = window.innerWidth > 1280; // Check if larger than 1280px
 
     document.querySelectorAll('.socials img').forEach(img => {
         const defaultSrc = img.getAttribute('src'); // Default src
         const largeSrc = img.getAttribute('data-large-src'); // Large src
+        const smallSrc = img.getAttribute('data-small-src'); // Small src
 
         // Switch src based on screen size
-        img.src = isLargeScreen ? largeSrc : defaultSrc;
+        if (isLargeScreen) {
+            img.src = largeSrc || defaultSrc; // Use largeSrc or fallback to default
+        } else {
+            img.src = smallSrc || defaultSrc; // Use smallSrc or fallback to default
+        }
     });
 }
 
@@ -82,112 +87,37 @@ updateImageSrc();
 window.addEventListener('resize', updateImageSrc);
 window.addEventListener('load', updateImageSrc);
 
-// const scrollContainer = document.querySelector('.imgscroll');
-// const images = document.querySelectorAll('.imgscroll img');
-
-// // Duplicate images for infinite scrolling
-// images.forEach(img => {
-//     const clone = img.cloneNode(true); // Clone each image
-//     scrollContainer.appendChild(clone); // Append the clone
-// });
-
-// // Variables for smooth scrolling
-// let scrollAmount = 0;
-// const scrollSpeed = 4; // Pixels per frame (adjustable)
-
-// // Function to continuously scroll
-// function autoScroll() {
-//     scrollAmount += scrollSpeed; // Increment scroll position
-//     scrollContainer.scrollLeft = scrollAmount; // Update scroll position
-
-//     // Seamless loop: Reset when halfway through duplicated images
-//     if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-//         scrollAmount = 0; // Reset scroll position invisibly
-//         scrollContainer.scrollLeft = 0;
-//     }
-
-//     requestAnimationFrame(autoScroll); // Continue scrolling
-// }
-
-// // Start scrolling
-// autoScroll();
-
-// // **Block only horizontal manual scrolling (Improved)**
-// scrollContainer.addEventListener('wheel', (e) => {
-//     if (e.deltaX !== 0) { // Detect horizontal scroll attempts
-//         e.preventDefault(); // Block horizontal scroll
-//     }
-// }, { passive: false }); // Passive false allows e.preventDefault()
-
-// scrollContainer.addEventListener('touchmove', (e) => {
-//     if (e.touches.length > 1 || e.changedTouches[0].clientX !== e.changedTouches[0].clientX) {
-//         e.preventDefault(); // Block horizontal swipe gestures
-//     }
-// }, { passive: false });
 
 const scrollContainer = document.querySelector('.imgscroll');
 const images = document.querySelectorAll('.imgscroll img');
 
-// Parameters
-const numClones = 10; // Number of times to duplicate the images
-const scrollSpeed = 3; // Pixels per frame (adjustable speed)
+const numClones = 10;
+const scrollSpeed = 3;
 
-// 1. Duplicate images to simulate infinite scrolling
+// Duplicate images to simulate infinite scrolling
 for (let i = 0; i < numClones; i++) {
     images.forEach(img => {
-        const clone = img.cloneNode(true); // Clone each image
-        scrollContainer.appendChild(clone); // Append the clone
+        const clone = img.cloneNode(true);
+        scrollContainer.appendChild(clone);
     });
 }
 
-// 2. Continuous scrolling variables
-let scrollPos = 0; // Track current scroll position
+let scrollPos = 0;
 
 function autoScroll() {
-    // Increment the scroll position
     scrollPos += scrollSpeed;
 
-    // 4. Apply the scroll position
     scrollContainer.scrollLeft = scrollPos;
 
-    // Continue scrolling
     requestAnimationFrame(autoScroll);
 }
 
-// 5. Start the infinite scroll
 autoScroll();
 
-// Block only horizontal scroll (wheel event)
-scrollContainer.addEventListener('wheel', (e) => {
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { // Only block if horizontal scroll
-        e.preventDefault(); // Block horizontal scroll
-    }
-}, { passive: false }); // Allow preventDefault()
 
-// Block only horizontal swipe (touchmove event)
-scrollContainer.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0]; // Get the first touch point
+const targets = document.querySelectorAll('.pop, .fade, .raise');
 
-    // Detect horizontal swipe
-    const touchStartX = touch.clientX;
-    const touchStartY = touch.clientY;
-
-    e.target.addEventListener('touchmove', (moveEvent) => {
-        const moveTouch = moveEvent.touches[0];
-        const dx = Math.abs(moveTouch.clientX - touchStartX); // Horizontal movement
-        const dy = Math.abs(moveTouch.clientY - touchStartY); // Vertical movement
-
-        if (dx > dy) { // Block horizontal movement only
-            moveEvent.preventDefault();
-        }
-    }, { passive: false });
-});
-
-
-// IntersectionObserver for .pop elements
-const popTargets = document.querySelectorAll('.pop');
-
-const popObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -201,28 +131,7 @@ const popObserver = new IntersectionObserver(
     }
 );
 
-// Observe each .pop target
-popTargets.forEach((target) => popObserver.observe(target));
-
-// IntersectionObserver for .fade elements
-const fadeTargets = document.querySelectorAll('.fade');
-
-const fadeObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    },
-    {
-        root: null,
-        threshold: 1, // Threshold for .fade elements
-    }
-);
-
-// Observe each .fade target
-fadeTargets.forEach((target) => fadeObserver.observe(target));
+targets.forEach((target) => observer.observe(target));
 
 
 

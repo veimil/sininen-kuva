@@ -18,6 +18,18 @@
     opacity: 1;
 }
 
+/* 
+.raise{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.raise.visible{
+    opacity: 1;
+    transform: translateY(0);
+} */
+
 .closed {
     height: 0;
     opacity: 0;
@@ -80,7 +92,7 @@ h2 {
     scroll-behavior: smooth;
     align-items: center;
     scrollbar-width: none;
-
+    pointer-events: none;
 
 }
 
@@ -290,9 +302,10 @@ h2 {
 }
 
 .about {
-    
+
     background: radial-gradient(circle, #fafafa 50%, transparent 50%) repeat;
-    background-size: 5px 5px; /* Spacing between dots */
+    background-size: 5px 5px;
+    /* Spacing between dots */
     /* Grid spacing */
     background-color: white;
     /* Spacing between dots */
@@ -326,10 +339,9 @@ h2 {
     font-family: "EB Garamond", serif;
     font-size: 1.4rem;
     font-optical-sizing: auto;
-    font-weight: 300;
     font-style: normal;
     max-width: 400px;
-    filter: var(--filter1);
+    /* filter: var(--filter1); */
 }
 
 
@@ -344,7 +356,7 @@ h2 {
 .bluecard {
     background-color: rgb(240, 248, 255);
 
-    border-radius: 25px;
+    /* border-radius: 25px; */
     color: #111;
 }
 
@@ -366,7 +378,7 @@ h2 {
     height: auto;
     object-fit: cover;
     object-position: center;
-    max-width: 555px;
+    max-width: 777px;
 
 }
 
@@ -556,7 +568,7 @@ input {
 
 .checkboxandlabel {
     display: flex;
-    gap: 10px;
+    gap: 0.5rem;
     align-items: center;
 }
 
@@ -615,6 +627,12 @@ textarea {
     padding: 0.5rem;
 }
 
+hr {
+    border: none;
+    border-top: 2px solid rgb(222, 222, 222);
+    margin-bottom: 1rem;
+    width: 100%;
+}
 
 
 input[type="submit"] {
@@ -631,7 +649,7 @@ input[type="submit"] {
 }
 
 .checkboxcolumn p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .messagecolumn {
@@ -655,7 +673,6 @@ input[type="submit"] {
     transition: transform 0.1s ease-out;
     margin: 2rem auto;
     margin-bottom: 1rem;
-    font-weight: 300;
     border: 2px solid #222;
 }
 
@@ -1141,6 +1158,11 @@ footer p {
     .gallerypreviewitems {
         flex-direction: row;
         max-width: none;
+    }
+
+    .fade {
+        transition: none;
+        opacity: 1;
     }
 
     .contactitems {
