@@ -42,23 +42,23 @@ function autoScroll() {
 autoScroll();
 
 
-const targets = document.querySelectorAll('.pop, .fade');
+// const targets = document.querySelectorAll('.pop, .fade');
 
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    },
-    {
-        root: null,
-        threshold: 0.7, // Threshold for .pop elements
-    }
-);
+// const observer = new IntersectionObserver(
+//     (entries) => {
+//         entries.forEach((entry) => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add('visible');
+//             }
+//         });
+//     },
+//     {
+//         root: null,
+//         threshold: 0.7, // Threshold for .pop elements
+//     }
+// );
 
-targets.forEach((target) => observer.observe(target));
+// targets.forEach((target) => observer.observe(target));
 
 
 
