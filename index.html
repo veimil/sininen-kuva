@@ -242,17 +242,18 @@
         }
 
         .quote-small {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             /* background-image: linear-gradient(to bottom left, rgb(200, 225, 255), rgb(169, 207, 255)); */
+            font-weight: lighter;
             flex-grow: 1;
             padding: 0 3rem;
             font-size: 1.3rem;
             text-align: center;
             background-color: #111;
             color: white;
-            max-width: 555px;
             margin: 0 auto;
             z-index: 10;
         }
@@ -391,9 +392,7 @@
 
     <section class="cover">
         <div class="coveritems">
-            <!-- <div class="coverimg"> -->
-            <!-- <img class="coverimg" src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177"
-                height="3094" style="opacity: 0;" onload="this.classList.add('loaded')" /> -->
+
             <div class="coverimg" id="coverImg"></div>
             <script>
                 const coverImgDiv = document.getElementById('coverImg');
@@ -401,7 +400,7 @@
 
                 img.src = '/images/sininenkuva.webp';
                 img.onload = () => {
-                    coverImgDiv.classList.add('loaded'); // Add the 'loaded' class
+                    coverImgDiv.classList.add('loaded');
                 };
             </script>
             <!-- </div> -->
