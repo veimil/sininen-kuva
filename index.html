@@ -13,12 +13,16 @@
     <link rel="preload" as="image" href="/images/logo-light.webp">
 
     <script>
+
         function setViewportHeight() {
-            document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+            if (window.innerWidth >= 1024) {
+                document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+            }
         }
         setViewportHeight();
 
         window.addEventListener("resize", setViewportHeight);
+
     </script>
 
     <!-- Critical CSS -->
