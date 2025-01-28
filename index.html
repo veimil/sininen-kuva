@@ -208,7 +208,6 @@
         .cover {
             height: calc(var(--vh) - 155px);
             background-color: #111;
-
         }
 
         .coveritems {
@@ -220,23 +219,10 @@
         }
 
         .coverimg {
-            width: 100%;
             height: 67%;
-            overflow: hidden;
-            z-index: 10;
-            display: flex;
-            justify-content: center;
-            /* isommalle */
-            /* height: 100vh; */
-        }
-
-        .coverimg img {
-            height: 100%;
             width: 100%;
-
-            /*toisin päin isommalle */
-            /* max-height: calc(100vh - 85px); */
             object-fit: cover;
+            object-position: center;
         }
 
         .quote-small {
@@ -328,11 +314,6 @@
                 font-size: 1.4rem;
             }
 
-            .coverimg img {
-                height: 100%;
-                width: auto;
-            }
-
             .quote-big {
                 height: 550px;
             }
@@ -394,9 +375,10 @@
 
     <section class="cover">
         <div class="coveritems">
-            <div class="coverimg">
-                <img src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177" height="3094" />
-            </div>
+            <!-- <div class="coverimg"> -->
+            <img class="coverimg" src="/images/sininenkuva.webp" alt="Sininen Kuva cover image" width="5177"
+                height="3094" />
+            <!-- </div> -->
             <p class="quote-small">
                 "Sininen kuva kuvaa maailmasi sellaisena kuin mieli sen
                 näkee"

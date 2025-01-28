@@ -13,6 +13,55 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+const scrollContainer = document.querySelector('.imgscroll');
+const images = document.querySelectorAll('.imgscroll img');
+
+const numClones = 10;
+const scrollSpeed = 3;
+
+// Duplicate images to simulate infinite scrolling
+for (let i = 0; i < numClones; i++) {
+    images.forEach(img => {
+        const clone = img.cloneNode(true);
+        scrollContainer.appendChild(clone);
+    });
+}
+
+
+
+let scrollPos = 0;
+
+function autoScroll() {
+    scrollPos += scrollSpeed;
+
+    scrollContainer.scrollLeft = scrollPos;
+
+    requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+
+
+const targets = document.querySelectorAll('.pop, .fade, .raise');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    {
+        root: null,
+        threshold: 1, // Threshold for .pop elements
+    }
+);
+
+targets.forEach((target) => observer.observe(target));
+
+
+
 let dropdownVisible = false;
 
 const dropdown = document.querySelector('.dropdown');
@@ -37,9 +86,9 @@ document.querySelector('.dropdown nav').addEventListener('click', (event) => {
     }
 });
 
-window.addEventListener("load", () => {
+// window.addEventListener("load", () => {
 
-});
+// });
 
 
 const modal = document.getElementById('videoModal');
@@ -82,56 +131,10 @@ function updateImageSrc() {
     });
 }
 
-// Run on load and resize
+
 updateImageSrc();
 window.addEventListener('resize', updateImageSrc);
 window.addEventListener('load', updateImageSrc);
-
-
-const scrollContainer = document.querySelector('.imgscroll');
-const images = document.querySelectorAll('.imgscroll img');
-
-const numClones = 10;
-const scrollSpeed = 3;
-
-// Duplicate images to simulate infinite scrolling
-for (let i = 0; i < numClones; i++) {
-    images.forEach(img => {
-        const clone = img.cloneNode(true);
-        scrollContainer.appendChild(clone);
-    });
-}
-
-let scrollPos = 0;
-
-function autoScroll() {
-    scrollPos += scrollSpeed;
-
-    scrollContainer.scrollLeft = scrollPos;
-
-    requestAnimationFrame(autoScroll);
-}
-
-autoScroll();
-
-
-const targets = document.querySelectorAll('.pop, .fade, .raise');
-
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    },
-    {
-        root: null,
-        threshold: 1, // Threshold for .pop elements
-    }
-);
-
-targets.forEach((target) => observer.observe(target));
 
 
 
