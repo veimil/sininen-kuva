@@ -206,7 +206,7 @@
 
 
         .cover {
-            height: calc(var(--vh) - 155px);
+            height: calc(var(--vh) - 88px);
             background-color: #111;
         }
 
@@ -226,7 +226,6 @@
         }
 
         .quote-small {
-            font-family: ubuntuL;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -416,7 +415,7 @@
 
                 <img class="infosectionimg" src="images/sininenglow.png" alt="background hue">
 
-                <div class="infocard pop">
+                <div class="infocard fade">
                     <h2>Kuvauspalvelut</h2>
                     <p>Tarjoan joustavasti seuraavia valokuvauspalveluita:</p>
                     <ul>
@@ -427,7 +426,7 @@
                         <li>Lehtikuvaukset</li>
                     </ul>
                 </div>
-                <div class="infocard pop">
+                <div class="infocard fade">
                     <h2>Paikkakunnat</h2>
                     <p>Työskentelen Uudellamaalla ja tarpeen mukaan muualla Suomessa sekä ulkomailla. Voit tiedustella
                         minulta kuvausjärjestelyistä mikäli tarvitsemasi kuvauspalvelut vaativat matkustamista
@@ -650,6 +649,8 @@
                 </div>
             </div>
         </section>
+
+
         <div id="videoModal" class="modal">
             <div class="modal-content">
 
@@ -672,6 +673,7 @@
                     Milton</span></a></p>
         </div>
     </footer>
+
     <script src="koodi.js" defer></script>
     <script>
         const link = document.createElement('link');
@@ -679,6 +681,7 @@
         link.rel = "stylesheet";
         document.head.appendChild(link);
     </script>
+
 </body>
 
 </html>
