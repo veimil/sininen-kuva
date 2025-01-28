@@ -284,10 +284,20 @@ h2 {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: white;
     font-family: ubuntuR;
     color: var(--black);
     position: relative;
+}
+
+.about {
+    
+    background: radial-gradient(circle, #fafafa 50%, transparent 50%) repeat;
+    background-size: 5px 5px; /* Spacing between dots */
+    /* Grid spacing */
+    background-color: white;
+    /* Spacing between dots */
+    /* Spacing between dots */
+    /* Fallback color */
 }
 
 .aboutinner {
@@ -319,6 +329,7 @@ h2 {
     font-weight: 300;
     font-style: normal;
     max-width: 400px;
+    filter: var(--filter1);
 }
 
 
@@ -366,25 +377,6 @@ h2 {
     font-family: ubuntuR;
 
 }
-
-.aboutsectionimg {
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
-/* .screenshotcontainer {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    padding-right: 2rem;
-
-}
-*/
 
 
 .gallerypreview {
@@ -677,7 +669,7 @@ input[type="submit"] {
     height: 100%;
     background-color: #111;
     background-image: url('/images/sininenglow.webp');
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }

@@ -183,25 +183,46 @@ scrollContainer.addEventListener('touchmove', (e) => {
     }, { passive: false });
 });
 
-const targets = document.querySelectorAll('.pop, .fade');
 
-const observer = new IntersectionObserver(
+// IntersectionObserver for .pop elements
+const popTargets = document.querySelectorAll('.pop');
+
+const popObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing after visibility
             }
         });
     },
     {
         root: null,
-        threshold: 0.7,
+        threshold: 1, // Threshold for .pop elements
     }
 );
 
-// Observe each target
-targets.forEach((target) => observer.observe(target));
+// Observe each .pop target
+popTargets.forEach((target) => popObserver.observe(target));
+
+// IntersectionObserver for .fade elements
+const fadeTargets = document.querySelectorAll('.fade');
+
+const fadeObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    {
+        root: null,
+        threshold: 1, // Threshold for .fade elements
+    }
+);
+
+// Observe each .fade target
+fadeTargets.forEach((target) => fadeObserver.observe(target));
 
 
 
