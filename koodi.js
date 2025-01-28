@@ -42,7 +42,7 @@ function autoScroll() {
 autoScroll();
 
 
-const targets = document.querySelectorAll('.pop, .raise');
+const targets = document.querySelectorAll('.pop, .fade');
 
 const observer = new IntersectionObserver(
     (entries) => {
@@ -54,31 +54,11 @@ const observer = new IntersectionObserver(
     },
     {
         root: null,
-        threshold: 1, // Threshold for .pop elements
+        threshold: 0.7, // Threshold for .pop elements
     }
 );
 
 targets.forEach((target) => observer.observe(target));
-
-
-//for fade elements
-const fadeTargets = document.querySelectorAll('.fade');
-
-const fadeObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    },
-    {
-        root: null,
-        threshold: 0.5, // Threshold for .pop elements
-    }
-);
-
-fadeTargets.forEach((target) => fadeObserver.observe(target));
 
 
 
